@@ -65,7 +65,12 @@ Assert.That.Throws.InnerException
 Assert.That.Throws.SystemException
 Assert.That.Throws.ExceptionWithMessage
 ```
+3. Ability to create a chain of assertions in a single assert. For instance 
+`Assert.That.IsNotNull(animal).And.IsOfType<Cat>(animal)`
 
 #### Benefits for custom assertion consumers
 1. Easily discoverable - Intellisense shows up in most IDEs ensuring discoverability for these custom assertions since they are all rooted under the in-box Assert class.
 2. Readable - Using linq type expressions enhances readability.
+
+## Open questions
+1. How important are combined asserts in a single Assert statement (Assert.That.Something.And.Something) and how much of this should be available in-box?
