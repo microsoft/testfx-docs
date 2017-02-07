@@ -76,12 +76,12 @@ As a principle, the test bed would consist mostly of unit tests(~70-80%), follow
 
 All the tests in the testfx repo can be run via the `Visual Studio Test Explorer`. Building `/src/testfx/TestFx.sln` as described in the build section above should populate all the tests in the Test Explorer.
 
-A specific type of tests can be run using a search filter.
+A specific type of tests can be run by providing a search filter in the Test Explorer window.
 For instance to run unit tests use `project:"Unit"`. For running smoke tests, use the `project:"Smoke"` filter.
 
 ### Running tests with command line(CLI)
 
-To execute tests, run the following command:
+To execute tests via command line, run the following command:
 
 ```
 > cd /src/testfx
@@ -94,7 +94,7 @@ By default, only unit tests are run. To run smoke tests, one can provide the `-p
 > test.cmd -p smoke
 ```
 
-The `-p` option can be used to run tests for any assembly as well. For instance to run *TestFramework* tests the following command can be used:
+The `-p` option can also be used to run tests from a specific assembly. For instance to run *TestFramework* tests the following command can be used:
 
 ```
 > test.cmd -p TestFramework
@@ -126,7 +126,7 @@ These packages can be consumed from a non-VS IDE/editor by:
 nuget.exe update -id MSTest.TestFramework -id MSTest.TestAdapter -version 99.99.99-dev -source "<Root>\src\testfx\artifacts\Debug\MSTestPackages" -prerelease packages.config
 ```
 
-More documentation for the nuget.exe reference is [here](https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference)
+Documentation for nuget.exe command line reference is [here](https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference)
 
 ## Diagnostics
 
