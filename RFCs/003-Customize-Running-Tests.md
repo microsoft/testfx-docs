@@ -106,7 +106,9 @@ public interface ITestMethod
 }
 ```
 
-Lets take a very simple example to apply this extensibility on - the task is to validate the stability of a test scenario, that is ensure that the test for that scenario passes always when run 'n' number of times. 
+From a test authors perspective, the test method would now be adorned with the type that extends `TestMethodAttribute` to light up the extended functionality.
+
+Let us take a very simple example to apply this extensibility on - the task is to validate the stability of a test scenario, that is ensure that the test for that scenario passes always when run 'n' number of times. 
 We start by declaring an `IterativeTestMethodAttribute` that extends `TestMethodAttribute`. We then override `TestMethodAttribute.Execute()` to run the test 'n' number of times.
 
 ```
@@ -134,6 +136,20 @@ public class IterativeTestMethodAttribute : TestMethodAttribute
 }
 ```
 
+From a test authors perspective, the test method would now be adorned with a `IterativeTestMethodAttribute` instead.
+
+```
+[TestClass]
+public class LongRunningScenarios()
+{
+    [IterativeTestMethod(5)]
+    public void LongRunningTest()
+    {
+
+    }
+}
+```
+
 ### Test Class level
 Scaling up the test method level extensibility gets one to a position of customizing execution of all test methods under a unit, which in this case is a TestClass. One can do so by extending the `TestClassAttribute`. 
 
@@ -152,6 +168,8 @@ public class TestClassAttribute : Attribute
 ```
 
 Overriding `GetTestMethodAttribute()` allows extensions to provide a custom `TestMethodAttribute` that specifies how a specific method is run as detailed in the Test Method level extensibility section above.
+
+From a test authors perspective, the test class would now be adorned with the type that extends `TestClassAttribute` to light up the extended functionality.
 
 To explain this better, lets go back to the example of running a test method 'n' number of times to determine the stability of a scenario. The task now is scaled up to ensure all test methods in a unit are stable.
 We start by declaring an `IterativeTestClassAttribute` that extends `TestClassAttribute`. We then extend `GetTestMethodAttribute()` to return an `IterativeTestMethodAttribute`.
@@ -177,6 +195,26 @@ public class IterativeTestClassAttribute : TestClassAttribute
 ```
 
 The Test Method level extensibility workflow then kicks in when running all test methods in the class ensuring that each method is run 'n' number of times. A point to note from the code sample is that one can have a method level value for 'n' that overrides the class level value. This is possible because the `GetTestMethodAttribute` conditionally returns a new `IterativeTestMethodAttribute` only if the attribute is not already of that type. So if a method is already adorned with an `IterativeTestMethodAttribute` then the stabilityThreshold on the method take precedence over the class. Thus, one can choose how each individual method in the unit is executed. 
+
+From a test authors perspective, the test class would now be adorned with a `IterativeTestClassAttribute` instead.
+
+```
+[IterativeTestClass(10)]
+public class LongRunningScenarios()
+{
+    [TestMethod]
+    public void TestConnection()
+    {
+
+    }
+
+    [IterativeTestMethod(5)]
+    public void LongRunningTest()
+    {
+
+    }
+}
+```
 
 ## Open questions
 1. There can only be one extension that is in control of the execution flow. Should this change to allow the execution flow through multiple extensions? How would that look like? 
