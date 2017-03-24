@@ -5,6 +5,7 @@ Welcome to the repository which contains content for the Microsoft Test Framewor
 The test framework is documented on [MSDN](https://msdn.microsoft.com/en-us/library/hh598960.aspx). Additional documentation is listed below:
  - [Framework Extensibility Description Attributes](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/001-Framework-Extensibility-Description-Attributes.md)
  - [Framework Extensibility for Custom Assertions](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/002-Framework-Extensibility-Custom-Assertions.md)
+ - [Roadmap](https://github.com/Microsoft/testfx-docs/blob/master/roadmap.md)
 
 ### Contributing
 There are many ways to contribute to VSTest
