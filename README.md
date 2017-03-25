@@ -2,7 +2,6 @@
 Welcome to the repository which contains content for the Microsoft Test Framework "MSTest V2" documentation. If you are looking for the Microsoft Test Framework "MSTest V2" product repository, you can find it [here](https://github.com/Microsoft/testfx).
 
 ### Documentation
-The test framework is documented on [MSDN](https://msdn.microsoft.com/en-us/library/hh598960.aspx). Additional documentation is listed below:
  - [Framework Extensibility Description Attributes](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/001-Framework-Extensibility-Description-Attributes.md)
  - [Framework Extensibility for Custom Assertions](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/002-Framework-Extensibility-Custom-Assertions.md)
  - [Customize Running tests](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/003-Customize-Running-Tests.md)
