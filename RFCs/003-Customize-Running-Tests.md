@@ -217,4 +217,5 @@ public class LongRunningScenarios()
 ```
 
 ## Open questions
-1. There can only be one extension that is in control of the execution flow. Should this change to allow the execution flow through multiple extensions? How would that look like? 
+1. There can only be one extension that is in control of the execution flow in this model. Should this change to allow the execution flow through multiple extensions? How would that look like? 
+2. Would a similar model work for extensions that want to hook into Initialize/Cleanup functionality?
