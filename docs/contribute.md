@@ -3,7 +3,7 @@
 This article will help you build, test and consume local builds of the MSTest Framework and Adapter.
 
 ## Prerequisites
-Please install `Visual Studio 2017 RC 2` or higher with the `.Net desktop development` and `Universal Windows Platform development` workloads installed. See download
+Please install `Visual Studio 2017 RC 2` or higher with the `.Net desktop development`, `Universal Windows Platform development` and `.Net Core cross-platform development` workloads installed. See download
 link [here](https://www.microsoft.com/net/core#windowsvs2017).
 
 Clone the repository to a local directory. 

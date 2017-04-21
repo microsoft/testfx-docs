@@ -80,7 +80,7 @@ To provide extension writers with the ability to have strongly typed attributes 
 And test methods would be decorated in a much more convenient form as below:
 ```
         [TestMethod]
-        [WorItem(234)]
+        [WorkItem(234)]
         public void TestMethod()
         {
         }
