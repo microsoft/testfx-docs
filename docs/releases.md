@@ -1,5 +1,21 @@
 # Release Notes
 
+## 1.1.17
+Fixes part of this release:
+ 1. Console.WriteLine support for .NetCore Projects . [#18](https://github.com/Microsoft/testfx/issues/18) [enhancement]
+ 2. Inheritance support for base classes that resides in different assemblies. [#23](https://github.com/Microsoft/testfx/issues/23) [enhancement]
+ 3. TestContext.Writeline does not output messages. [#120](https://github.com/Microsoft/testfx/issues/120)
+ 4. Logger.LogMessage logs a message mutliple times. [#114](https://github.com/Microsoft/testfx/issues/114)
+ 5. TestContext.CurrentTestOutcome is always InProgress in the TestCleanup method. [#89](https://github.com/Microsoft/testfx/issues/89)
+ 6. An inconclusive in a test initialize fails the test if it has an ExpectedException. [#136](https://github.com/Microsoft/testfx/issues/136) 
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.1.14...v1.1.17)
+ 
+ ### Builds
+ 
+* MSTest.TestFramework: [1.1.17](https://www.nuget.org/packages/MSTest.TestFramework/1.1.17)
+* MSTest.TestAdapter: [1.1.17](https://www.nuget.org/packages/MSTest.TestAdapter/1.1.17)
+
 ## 1.1.14
 Fixes part of this release:
  1. Ability to add custom assertions. [#116](https://github.com/Microsoft/testfx/issues/116) [enhancement]
