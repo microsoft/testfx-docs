@@ -13,5 +13,10 @@ The MSTest test framework currently lacks the ability to execute tests in parall
 The MSTest test framework has a strong history. We will strive to achieve compatibility with earlier versions where it would be of overall benefit to the community. See our blog post [here](https://blogs.msdn.microsoft.com/visualstudioalm/2017/02/25/mstest-v2-now-and-ahead/) for several such issues you reported that we have already fixed.
  - Address compat issues as appropriate.
 
+### Retry mechanism
+The MSTest test framework has lack of retry mechanism which is common in other test frameworks and runners like Nunit. The wrapper implementation is alredy exist https://automatetheplanet.com/mstest-rerun-failed-tests-through-mstest-exe-wrapper-application/
+ - Implement retry mechanism to make a test run more stable.
+
+
 ## Summary
 These are examples of the work we will be focusing on in the next quarter. We will provide much more detail through individual issues. Follow along, and let us know what you think. We look forward to working with you!
