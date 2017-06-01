@@ -5,6 +5,7 @@ Welcome to the repository which contains content for the Microsoft Test Framewor
  - [Framework Extensibility Description Attributes](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/001-Framework-Extensibility-Description-Attributes.md)
  - [Framework Extensibility for Custom Assertions](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/002-Framework-Extensibility-Custom-Assertions.md)
  - [Customize Running tests](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/003-Customize-Running-Tests.md)
+ - [In-assembly parallel execution](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/004-In-Assembly-Parallel-Execution.md)
  - [Roadmap](https://github.com/Microsoft/testfx-docs/blob/master/roadmap.md)
 
 ### Contributing
