@@ -1,5 +1,21 @@
 # Release Notes
 
+## 1.1.18
+Fixes part of this release:
+ 1. Ability to provide a reason for Ignored tests. [#126](https://github.com/Microsoft/testfx/issues/126) [enhancement]
+ 2. VB unit test project templates that ship in VS 2017 do not reference MSTest V2 nuget packages. [#132](https://github.com/Microsoft/testfx/issues/132) [enhancement]
+ 3. Assert.IsInstanceOf passes on value null. [#178](https://github.com/Microsoft/testfx/issues/178) [Contributed By [LarsCelie](https://github.com/larscelie)]
+ 4. Test methods in a base class defined in a different assembly are not navigable in Test Explorer. [#163](https://github.com/Microsoft/testfx/issues/163) [Contributed By [ajryan](https://github.com/ajryan)]
+ 5. Enable MSTest framework based tests targeting .NET Core to be run and debugged from within VSCode. [#182](https://github.com/Microsoft/testfx/issues/182)
+ 6. Web project templates that ship in VS 2017 do not reference MSTest V2 nuget packages. [#167](https://github.com/Microsoft/testfx/issues/167) 
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.1.17...v1.1.18)
+ 
+ ### Builds
+ 
+* MSTest.TestFramework: [1.1.18](https://www.nuget.org/packages/MSTest.TestFramework/1.1.18)
+* MSTest.TestAdapter: [1.1.18](https://www.nuget.org/packages/MSTest.TestAdapter/1.1.18)
+
 ## 1.1.17
 Fixes part of this release:
  1. Console.WriteLine support for .NetCore Projects . [#18](https://github.com/Microsoft/testfx/issues/18) [enhancement]
