@@ -18,7 +18,10 @@ Here is a solution that meets the above requirements:
 
 The property storing test data should be declared as static.
 ```
-    static IEnumerable<object[]> ReusableTestDataProperty =
+[TestClass]
+public class UnitTests
+{
+    static IEnumerable<object[]> ReusableTestDataProperty
         {
             get
             {
@@ -36,29 +39,38 @@ The property storing test data should be declared as static.
                         new object[] {4, 5, 6}
                     }; 
     }
-```
 
-This property can then be used to associate test data with data driven test case like below:
-```
+    // Property ReusableTestDataProperty can be used to associate test data with data driven test case like below:
     [TestMethod]
     [DynamicData("ReusableTestDataProperty")]
     public void DynamicDataTestMethod1(int a, int b, int c)
     {
         Assert.IsTrue(1, a%3);
         Assert.IsTrue(2, b%3);
-        Assert.IsTrue(3, c%3);
+        Assert.IsTrue(0, c%3);
     }
 
+    // Method ReusableTestDataMethod can be used to associate test data with data driven test case like below:
     [TestMethod]
     [DynamicData("ReusableTestDataMethod")]
     public void DynamicDataTestMethod2(int a, int b, int c)
     {
         Assert.IsTrue(1, a%3);
         Assert.IsTrue(2, b%3);
-        Assert.IsTrue(3, c%3);
+        Assert.IsTrue(0, c%3);
     }
+}
 ```
-In a similar way, same test data can be associated with multiple test cases.
+
+In case, the property or method exists in different class or dll, `DynamicData` can be declared as
+
+```
+    [DynamicData(typeOf(UnitTests),"ReusableTestDataProperty")]
+
+    [DynamicData(typeOf(UnitTests),"ReusableTestDataMethod")]
+
+```
+
 
 ### Benefits of using DynamicData attribute
 1. Leverages the familiar syntax of declaring inline data using `DataRow` attribute.

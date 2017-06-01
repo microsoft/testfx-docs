@@ -4,8 +4,7 @@
 This details the MSTest V2 framework extensibility for specifying custom data source for data driven tests.
 
 ## Motivation
-Often times, custom data source is required for data driven tests. If the test framework provides an extensibility, custom data source functionality can be
-* Easily extended to use test data from custom data sources.
+Often times, custom data source is required for data driven tests. User should be able to leverage test framework extensibility to provide custom data sources for test execution.
 
 ## Detailed Design
 
@@ -22,7 +21,7 @@ The test framework should define an interface `IDataSource` which can be extende
         /// <summary>
         /// Gets the data from custom data source.
         /// </summary>
-        public IEnumerable<object[]> GetData();
+        public IEnumerable<object[]> GetData(MethodInfo methodInfo);
     }
 ```
 
