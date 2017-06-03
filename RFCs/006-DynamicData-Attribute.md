@@ -1,17 +1,15 @@
 # RFC 006- DynamicData Attribute for Data Driven Tests
 
 ## Summary
-This details the MSTest V2 framework attribute "DynamicData" for data driven tests where test data, declared as properties or methods, can be shared between more than one test cases.
+This details the MSTest V2 framework attribute "DynamicData" for data driven tests where test data can be declared as properties or in methods and can be shared between more than one test cases.
 
 ## Motivation
-Often times, the inline test data need to be shared between tests. There could be more than one test cases in different files which can use same test data. In most of these situations, user end up declaring same inline data for multiple test cases using "DataRow" attribute. Test framework should provide feature so that test data, declared as property, can be
-* Easily re-used
-* Easily organized
+Often times, data driven tests use shared test data which can be declared as properties or in methods. User can use `DataRow` for declaring inline data, but it can't be shared. Test framework should provide feature so that test data can declared as property or in method and can be easily used by multiple tests.
 
 ## Detailed Design
 
 ### Requirements
-1. Inline test data can be reused by multiple test cases.
+1. Test data can be declared as properties or in methods and reused by multiple test cases.
 
 ### Proposed solution
 Here is a solution that meets the above requirements:
