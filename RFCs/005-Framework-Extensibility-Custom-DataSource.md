@@ -4,12 +4,13 @@
 This details the MSTest V2 framework extensibility for specifying custom data source for data driven tests.
 
 ## Motivation
-Often times, custom data source is required for data driven tests. User should be able to leverage test framework extensibility to provide custom data sources for test execution.
+Often times, custom data sources are required for data driven tests. User should be able to leverage test framework extensibility to provide custom data sources for test execution.
 
 ## Detailed Design
 
 ### Requirements
-1. Test data from custom data source should be easily associated with multiple test cases.
+1. A cusotm data source can be used by multiple test cases. 
+2. A test case can have multiple data sources.
 
 ### Proposed solution
 Here is a solution for using custom data source in data driven tests.
@@ -48,12 +49,12 @@ Here is how the test methods are decorated with concrete implementation of `IDat
     }
 ```
 In a similar way, multiple test methods can be decorated with same data source.
-Also, a test method can be decorated with multiple data sources.
+A test method can also be decorated with multiple data sources.
 
 ###  Discovery of `IDataSource` attributes
-The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding an attribute inheriting from `IDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
+The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `IDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
 
 ### Benefits of using `IDataSource`
-1. Uses will be able to extend `IDataSource` to support custom data sources.
+1. Users can extend `IDataSource` to support custom data sources.
 2. Multiple tests can reuse the test data defined in same data source.
 3. A test case can use multiple test data sources.

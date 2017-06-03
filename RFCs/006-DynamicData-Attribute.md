@@ -9,12 +9,12 @@ Often times, data driven tests use shared test data which can be declared as pro
 ## Detailed Design
 
 ### Requirements
-1. Test data can be declared as properties or in methods and reused by multiple test cases.
+1. Test data can be declared as properties or in methods and and can be by multiple test cases.
 
 ### Proposed solution
 Here is a solution that meets the above requirements:
 
-The property storing test data should be declared as static.
+The static property or a static method having test data should be declared as below:
 ```
 [TestClass]
 public class UnitTests
@@ -38,7 +38,7 @@ public class UnitTests
                     }; 
     }
 
-    // Property ReusableTestDataProperty can be used to associate test data with data driven test case like below:
+    // Property ReusableTestDataProperty can be used as data source for test data with data driven test case.
     [TestMethod]
     [DynamicData("ReusableTestDataProperty")]
     public void DynamicDataTestMethod1(int a, int b, int c)
@@ -48,7 +48,7 @@ public class UnitTests
         Assert.IsTrue(0, c%3);
     }
 
-    // Method ReusableTestDataMethod can be used to associate test data with data driven test case like below:
+    // Method ReusableTestDataMethod can be used as data source for test data with data driven test case.
     [TestMethod]
     [DynamicData("ReusableTestDataMethod")]
     public void DynamicDataTestMethod2(int a, int b, int c)
@@ -60,7 +60,7 @@ public class UnitTests
 }
 ```
 
-In case, the property or method exists in different class or dll, `DynamicData` can be declared as
+In case, the property or method exists in a class other that the test class, an additional `Type` argument should be passed to `DynamicData` constructor.
 
 ```
     [DynamicData(typeOf(UnitTests),"ReusableTestDataProperty")]
@@ -69,8 +69,6 @@ In case, the property or method exists in different class or dll, `DynamicData` 
 
 ```
 
-
 ### Benefits of using DynamicData attribute
-1. Leverages the familiar syntax of declaring inline data using `DataRow` attribute.
-2. More than one tests can use the same test data, if required. 
-3. Changes in the shared test data can be scoped to single place. 
+1. More than one tests can use the same test data, if required. 
+2. Changes in the shared test data can be scoped to single place.
