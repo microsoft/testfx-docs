@@ -15,22 +15,27 @@ Often times, custom data sources are required for data driven tests. User should
 ### Proposed solution
 Here is a solution for using custom data source in data driven tests.
 
-The test framework should define an interface `IDataSource` which can be extended to get data from custom data source.
+The test framework should define an abstract class `DataSource` which can be extended to get data from custom data source.
 ```
-    public interface IDataSource
+    public abstract DataSource : Attribute
     {
         /// <summary>
-        /// Gets the data from custom data source.
+        /// Gets the test data from custom data source.
         /// </summary>
-        public IEnumerable<object[]> GetData(MethodInfo methodInfo);
+        public abstract IEnumerable<object[]> GetData(MethodInfo methodInfo);
+
+        /// <summary>
+        /// Display name to be displayed for test corresponding to data row.
+        /// </summary>
+        public virtual string GetDisplayName(MethodInfo methodInfo, object[] data);
     }
 ```
 
-Here is how the test methods are decorated with concrete implementation of `IDataSource`:
+Here is how the test methods are decorated with concrete implementation of `DataSource`:
 ```
-    public class CustomTestDataSourceAttribute : IDataSource, Attribute
+    public class CustomTestDataSourceAttribute : DataSource
     {
-        public IEnumerable<object[]> GetData()
+        public IEnumerable<object[]> GetData(MethodInfo methodInfo)
         {
             return new[]
                     {   new object[] {1, 2, 3},
@@ -51,10 +56,10 @@ Here is how the test methods are decorated with concrete implementation of `IDat
 In a similar way, multiple test methods can be decorated with same data source.
 A test method can also be decorated with multiple data sources.
 
-###  Discovery of `IDataSource` attributes
+###  Discovery of `DataSource` attributes
 The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `IDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
 
-### Benefits of using `IDataSource`
-1. Users can extend `IDataSource` to support custom data sources.
+### Benefits of using `DataSource`
+1. Users can extend `DataSource` to support custom data sources.
 2. Multiple tests can reuse the test data defined in same data source.
 3. A test case can use multiple test data sources.

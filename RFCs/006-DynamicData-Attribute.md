@@ -43,9 +43,9 @@ public class UnitTests
     [DynamicData("ReusableTestDataProperty")]
     public void DynamicDataTestMethod1(int a, int b, int c)
     {
-        Assert.IsTrue(1, a%3);
-        Assert.IsTrue(2, b%3);
-        Assert.IsTrue(0, c%3);
+        Assert.AreEqual(1, a%3);
+        Assert.AreEqual(2, b%3);
+        Assert.AreEqual(0, c%3);
     }
 
     // Method ReusableTestDataMethod can be used as data source for test data with data driven test case.
@@ -53,9 +53,9 @@ public class UnitTests
     [DynamicData("ReusableTestDataMethod")]
     public void DynamicDataTestMethod2(int a, int b, int c)
     {
-        Assert.IsTrue(1, a%3);
-        Assert.IsTrue(2, b%3);
-        Assert.IsTrue(0, c%3);
+        Assert.AreEqual(1, a%3);
+        Assert.AreEqual(2, b%3);
+        Assert.AreEqual(0, c%3);
     }
 }
 ```
