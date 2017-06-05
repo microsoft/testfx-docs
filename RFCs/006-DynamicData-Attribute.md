@@ -50,7 +50,7 @@ public class UnitTests
 
     // Method ReusableTestDataMethod can be used as data source for test data with data driven test case.
     [TestMethod]
-    [DynamicData("ReusableTestDataMethod")]
+    [DynamicData("ReusableTestDataMethod", DynamicDataSourceType.Method)]
     public void DynamicDataTestMethod2(int a, int b, int c)
     {
         Assert.AreEqual(1, a%3);
@@ -63,12 +63,14 @@ public class UnitTests
 In case, the property or method exists in a class other that the test class, an additional `Type` argument should be passed to `DynamicData` constructor.
 
 ```
-    [DynamicData(typeOf(UnitTests),"ReusableTestDataProperty")]
+    [DynamicData("ReusableTestDataProperty", typeOf(UnitTests))]
 
-    [DynamicData(typeOf(UnitTests),"ReusableTestDataMethod")]
+    [DynamicData("ReusableTestDataMethod", typeOf(UnitTests), DynamicDataSourceType.Method)]
 
 ```
+Please note that Enum `DynamicDataSourceType` is used to specify whether test data source is a property or method.
+Data source is considered as property by default.
 
 ### Benefits of using DynamicData attribute
-1. More than one tests can use the same test data, if required. 
+1. More than one tests can use the same test data, if required.
 2. Changes in the shared test data can be scoped to single place.
