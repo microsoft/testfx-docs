@@ -66,7 +66,6 @@ In case, the property or method exists in a class other that the test class, an 
     [DynamicData("ReusableTestDataProperty", typeOf(UnitTests))]
 
     [DynamicData("ReusableTestDataMethod", typeOf(UnitTests), DynamicDataSourceType.Method)]
-
 ```
 Please note that Enum `DynamicDataSourceType` is used to specify whether test data source is a property or method.
 Data source is considered as property by default.

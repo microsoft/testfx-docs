@@ -60,10 +60,10 @@ A test method can also be decorated with multiple data sources.
 
 Users can customize the display name of tests in test results by overriding `GetDisplayName()` method.
 ```
-     public override string GetDisplayName(MethodInfo methodInfo, object[] data)
-        {
+    public override string GetDisplayName(MethodInfo methodInfo, object[] data)
+    {
             return string.Format(CultureInfo.CurrentCulture, "MyFavMSTestV2Test ({0})", string.Join(",", data));
-        }
+    }
 ```
 
 The display name of tests in the above example would appear as :
