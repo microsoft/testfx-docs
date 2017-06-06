@@ -1,4 +1,4 @@
-# RFC 005- Framework Extensibility for Custom DataSource
+# RFC 005- Framework Extensibility for Custom Test Data Source
 
 ## Summary
 This details the MSTest V2 framework extensibility for specifying custom data source for data driven tests.
@@ -15,9 +15,9 @@ Often times, custom data sources are required for data driven tests. User should
 ### Proposed solution
 Here is a solution for using custom data source in data driven tests.
 
-The test framework should define an abstract class `DataSource` which can be extended to get data from custom data source.
+The test framework should define an abstract class `TestDataSource` which can be extended to get data from custom data source.
 ```
-    public abstract DataSource : Attribute
+    public abstract TestDataSource : Attribute
     {
         /// <summary>
         /// Gets the test data from custom data source.
@@ -31,9 +31,9 @@ The test framework should define an abstract class `DataSource` which can be ext
     }
 ```
 
-Here is how the test methods are decorated with concrete implementation of `DataSource`:
+Here is how the test methods are decorated with concrete implementation of `TestDataSource`:
 ```
-    public class CustomTestDataSourceAttribute : DataSource
+    public class CustomTestDataSourceAttribute : TestDataSource
     {
         public IEnumerable<object[]> GetData(MethodInfo methodInfo)
         {
@@ -72,10 +72,10 @@ MyFavMSTestV2Test (1,3,3)
 MyFavMSTestV2Test (4,5,6)
 ```
 
-###  Discovery of `DataSource` attributes
-The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `IDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
+###  Discovery of `TestDataSource` attributes
+The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `TestDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
 
-### Benefits of using `DataSource`
-1. Users can extend `DataSource` to support custom data sources.
+### Benefits of using `TestDataSource`
+1. Users can extend `TestDataSource` to support custom data sources.
 2. Multiple tests can reuse the test data defined in same data source.
 3. A test case can use multiple test data sources.
