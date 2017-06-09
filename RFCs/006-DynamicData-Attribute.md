@@ -9,7 +9,7 @@ Often times, data driven tests use shared test data which can be declared as pro
 ## Detailed Design
 
 ### Requirements
-1. Test data can be declared as properties or in methods and and can be by multiple test cases.
+1. Test data can be declared as properties or in methods and and can be reused by multiple test cases.
 
 ### Proposed solution
 Here is a solution that meets the above requirements:
