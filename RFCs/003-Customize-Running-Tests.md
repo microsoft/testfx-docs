@@ -15,7 +15,7 @@ The sections below details how one can customize execution at these two points.
 
 ### Test Method level
 Customizing test method level execution is simple - Extend the `TestMethodAttribute`. The `TestMethodAttribute` has the following signature:
-```
+```csharp
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 public class TestMethodAttribute : Attribute
 {
@@ -31,7 +31,7 @@ public class TestMethodAttribute : Attribute
 
 Extension writers would only need to override the `Execute` method to gain control on how a test is run. The `ITestMethod` instance allows one to get more context of the method under execution. The test method can be executed using `ITestMethod.Invoke()` or by just calling `base.Execute()` on the TestMethodAttribute to go back through the default flow of the Framework.
 
-```
+```csharp
 /// <summary>
 /// TestMethod for execution.
 /// </summary>
@@ -111,7 +111,7 @@ From a test authors perspective, the test method would now be adorned with the t
 Let us take a very simple example to apply this extensibility on - the task is to validate the stability of a test scenario, that is ensure that the test for that scenario passes always when run 'n' number of times. 
 We start by declaring an `IterativeTestMethodAttribute` that extends `TestMethodAttribute`. We then override `TestMethodAttribute.Execute()` to run the test 'n' number of times.
 
-```
+```csharp
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 public class IterativeTestMethodAttribute : TestMethodAttribute
 {
@@ -138,7 +138,7 @@ public class IterativeTestMethodAttribute : TestMethodAttribute
 
 From a test authors perspective, the test method would now be adorned with a `IterativeTestMethodAttribute` instead.
 
-```
+```csharp
 [TestClass]
 public class LongRunningScenarios()
 {
@@ -153,7 +153,7 @@ public class LongRunningScenarios()
 ### Test Class level
 Scaling up the test method level extensibility gets one to a position of customizing execution of all test methods under a unit, which in this case is a TestClass. One can do so by extending the `TestClassAttribute`. 
 
-```
+```csharp
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 public class TestClassAttribute : Attribute
 {
@@ -174,7 +174,7 @@ From a test authors perspective, the test class would now be adorned with the ty
 To explain this better, lets go back to the example of running a test method 'n' number of times to determine the stability of a scenario. The task now is scaled up to ensure all test methods in a unit are stable.
 We start by declaring an `IterativeTestClassAttribute` that extends `TestClassAttribute`. We then extend `GetTestMethodAttribute()` to return an `IterativeTestMethodAttribute`.
 
-```
+```csharp
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
 public class IterativeTestClassAttribute : TestClassAttribute
 {
@@ -198,7 +198,7 @@ The Test Method level extensibility workflow then kicks in when running all test
 
 From a test authors perspective, the test class would now be adorned with a `IterativeTestClassAttribute` instead.
 
-```
+```csharp
 [IterativeTestClass(10)]
 public class LongRunningScenarios()
 {

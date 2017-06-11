@@ -16,7 +16,7 @@ It is a requirement for teams to have description attributes which are strongly 
 
 ### Proposed solution
 The test framework currently has a TestProperty attribute which can be used to define custom traits as a KeyValuePair<string,string>. The definition of this attribute is as below:
-```
+```csharp
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public sealed class TestPropertyAttribute : Attribute
     {
@@ -47,7 +47,7 @@ The test framework currently has a TestProperty attribute which can be used to d
     }
 ``` 
 Here is how the test methods are decorated with this attribute:
-```
+```csharp
         [TestMethod]
         [TestProperty("WorkItem","234")]
         public void TestMethod()
@@ -61,7 +61,7 @@ Trait:"WorkItem" Trait:"234"
 This TestProperty is also filled into the TestPlatform's TestCase object which makes it available for reporting in the various loggers that can be plugged into the TestPlatform. 
 
 To provide extension writers with the ability to have strongly typed attributes to achieve what TestProperty above achieves, the proposal is to make TestProperty a non-sealed class allowing classes to extend it like below:
-```
+```csharp
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class WorkItemAttribute : TestPropertyAttribute
     {
@@ -78,7 +78,7 @@ To provide extension writers with the ability to have strongly typed attributes 
     }
 ```
 And test methods would be decorated in a much more convenient form as below:
-```
+```csharp
         [TestMethod]
         [WorkItem(234)]
         public void TestMethod()
