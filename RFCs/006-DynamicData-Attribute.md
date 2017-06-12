@@ -4,7 +4,7 @@
 This details the MSTest V2 framework attribute "DynamicData" for data driven tests where test data can be declared as properties or in methods and can be shared between more than one test cases.
 
 ## Motivation
-Often times, data driven tests use shared test data which can be declared as properties or in methods. User can use `DataRow` for declaring inline data, but it can't be shared. Test framework should provide feature so that test data can declared as property or in method and can be easily used by multiple tests.
+Often times, data driven tests use shared test data that can be declared as properties or in methods. User can use `DataRow` for declaring inline data, but it can't be shared. Test framework should provide feature so that test data can be declared as property or in method and can be easily used by multiple tests.
 
 ## Detailed Design
 
@@ -14,7 +14,7 @@ Often times, data driven tests use shared test data which can be declared as pro
 ### Proposed solution
 Here is a solution that meets the above requirements:
 
-The static property or a static method having test data should be declared as below:
+A static property or a static method having test data should be declared as below:
 ```
 [TestClass]
 public class UnitTests
@@ -60,7 +60,7 @@ public class UnitTests
 }
 ```
 
-In case, the property or method exists in a class other that the test class, an additional `Type` argument should be passed to `DynamicData` constructor.
+In case, the property or method exists in a class other than the test class, an additional `Type` argument should be passed to `DynamicData` constructor.
 
 ```
     [DynamicData("ReusableTestDataProperty", typeOf(UnitTests))]
