@@ -15,7 +15,7 @@ Often times, data driven tests use shared test data that can be declared as prop
 Here is a solution that meets the above requirements:
 
 A static property or a static method having test data should be declared as below:
-```
+```csharp
 [TestClass]
 public class UnitTests
 {
@@ -62,7 +62,7 @@ public class UnitTests
 
 In case, the property or method exists in a class other than the test class, an additional `Type` argument should be passed to `DynamicData` constructor.
 
-```
+```csharp
     [DynamicData("ReusableTestDataProperty", typeOf(UnitTests))]
 
     [DynamicData("ReusableTestDataMethod", typeOf(UnitTests), DynamicDataSourceType.Method)]

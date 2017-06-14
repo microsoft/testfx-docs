@@ -15,25 +15,25 @@ Often times, custom data sources are required for data driven tests. User should
 ### Proposed solution
 Here is a solution for using custom data source in data driven tests.
 
-The test framework should define an abstract class `TestDataSourceAttribute` which can be extended to get data from custom data source.
-```
-    public abstract TestDataSourceAttribute : Attribute
+The test framework should define an interface class `ITestDataSource` which can be extended to get data from custom data source.
+```csharp
+    public interface ITestDataSource
     {
         /// <summary>
         /// Gets the test data from custom data source.
         /// </summary>
-        public abstract IEnumerable<object[]> GetData(MethodInfo methodInfo);
+        IEnumerable<object[]> GetData(MethodInfo methodInfo);
 
         /// <summary>
         /// Display name to be displayed for test corresponding to data row.
         /// </summary>
-        public virtual string GetDisplayName(MethodInfo methodInfo, object[] data);
+        string GetDisplayName(MethodInfo methodInfo, object[] data);
     }
 ```
 
-Here is how the test methods are decorated with concrete implementation of `TestDataSourceAttribute`:
-```
-    public class CustomTestDataSourceAttribute : TestDataSourceAttribute
+Here is how the test methods are decorated with concrete implementation of `ITestDataSource`:
+```csharp
+    public class CustomTestDataSourceAttribute : Attribute, ITestDataSource
     {
         public IEnumerable<object[]> GetData(MethodInfo methodInfo)
         {
@@ -42,10 +42,20 @@ Here is how the test methods are decorated with concrete implementation of `Test
                         new object[] {4, 5, 6}
                     };
         }
+
+        string GetDisplayName(MethodInfo methodInfo, object[] data)
+        {
+            if (data != null)
+            {
+                return string.Format(CultureInfo.CurrentCulture, "{0} ({1})", methodInfo.Name, string.Join(",", data));
+            }
+
+            return null;
+        } 
     }
 ```
 
-```
+```csharp
     [TestMethod]
     [CustomTestDataSource]
     public void TestMethod1(int a, int b, int c)
@@ -59,7 +69,7 @@ In a similar way, multiple test methods can be decorated with same data source.
 A test method can also be decorated with multiple data sources.
 
 Users can customize the display name of tests in test results by overriding `GetDisplayName()` method.
-```
+```csharp
     public override string GetDisplayName(MethodInfo methodInfo, object[] data)
     {
             return string.Format(CultureInfo.CurrentCulture, "MyFavMSTestV2Test ({0})", string.Join(",", data));
@@ -67,15 +77,15 @@ Users can customize the display name of tests in test results by overriding `Get
 ```
 
 The display name of tests in the above example would appear as :
-```
+```csharp
 MyFavMSTestV2Test (1,3,3)
 MyFavMSTestV2Test (4,5,6)
 ```
 
-###  Discovery of `TestDataSourceAttribute` attributes
-The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `TestDataSourceAttribute`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
+###  Discovery of `ITestDataSource` attributes
+The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `ITestDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
 
-### Benefits of using `TestDataSourceAttribute`
-1. Users can extend `TestDataSourceAttribute` to support custom data sources.
+### Benefits of using `ITestDataSource`
+1. Users can extend `ITestDataSource` to support custom data sources.
 2. Multiple tests can reuse the test data defined in same data source.
 3. A test case can use multiple test data sources.
