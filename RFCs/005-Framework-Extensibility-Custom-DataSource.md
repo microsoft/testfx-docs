@@ -43,7 +43,7 @@ Here is how the test methods are decorated with concrete implementation of `ITes
                     };
         }
 
-        string GetDisplayName(MethodInfo methodInfo, object[] data)
+        public string GetDisplayName(MethodInfo methodInfo, object[] data)
         {
             if (data != null)
             {
