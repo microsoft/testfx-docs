@@ -19,20 +19,20 @@ Often times, the default set of assertion APIs are not sufficient to satisfy a w
  Here is a solution that is both easily pluggable and acquirable:
 
  The test frameworks Assertion class should be a non-static singleton with a C# Property('That') for accessing the instance:
- ```
+ ```csharp
     public class Assert{
 
         public static Assert That{
             get
             {
-                ...
+                // ...
             }
         }
     }
  ```
 
 Extension writers can then add C# extension methods for the Assertion class like below:
-```
+```csharp
     public static class SampleAssertExtensions
     {
         public static void IsOfType<T>(this Assert assert, object obj)
@@ -47,12 +47,12 @@ Extension writers can then add C# extension methods for the Assertion class like
 ```
 
 And consumers of this extension can consume it in their test code with the below simple syntax:
-```
+```csharp
     using SampleAssertExtensionsNamespace;
     
     public void TestMethod
     {
-        ...
+        // ...
         Assert.That.IsOfType<Dog>(animal);
     }
 ```
@@ -66,7 +66,9 @@ Assert.That.Throws.SystemException
 Assert.That.Throws.ExceptionWithMessage
 ```
 3. Ability to create a chain of assertions in a single assert. For instance 
-`Assert.That.IsNotNull(animal).And.IsOfType<Cat>(animal)`
+```csharp
+Assert.That.IsNotNull(animal).And.IsOfType<Cat>(animal)
+```
 
 #### Benefits for custom assertion consumers
 1. Easily discoverable - Intellisense shows up in most IDEs ensuring discoverability for these custom assertions since they are all rooted under the in-box Assert class.
