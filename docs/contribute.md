@@ -139,15 +139,3 @@ One can always add a `Debugger.Launch` at the main entry points:
 * [MSTestDiscoverer.DiscoverTests](https://github.com/Microsoft/testfx/blob/master/src/Adapter/MSTest.CoreAdapter/MSTestDiscoverer.cs) for discovery.
 * [MSTestExecutor.RunTests](https://github.com/Microsoft/testfx/blob/master/src/Adapter/MSTest.CoreAdapter/MSTestExecutor.cs) - both the overloads that take sources and tests for execution.
  Select the appropriate debugger and step through the code.
-
- ## Delta with MSTest V1
- 
- Listed are the difference in behaviour of MSTest V2 w.r.t MSTest V1 :
- 1. Test methods from base classes defined in another assembly are discovered by default. This default behaviour can be changed by passing in the following runsettings:
- ```
- <RunSettings>    
-  <MSTest> 
-    <EnableBaseClassTestMethodsFromOtherAssemblies>false</EnableBaseClassTestMethodsFromOtherAssemblies> 
-  </MSTest> 
-</RunSettings>
-```
