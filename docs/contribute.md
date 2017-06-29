@@ -143,7 +143,7 @@ One can always add a `Debugger.Launch` at the main entry points:
  ## Delta with MSTest V1
  
  Listed are the difference in behaviour of MSTest V2 w.r.t MSTest V1 :
- 1. Test methods from base classes defined in another assembly are dscovered by default. One can turn it off by passing in the following runsettings:
+ 1. Test methods from base classes defined in another assembly are discovered by default. This default behaviour can be changed by passing in the following runsettings:
  ```
  <RunSettings>    
   <MSTest> 
