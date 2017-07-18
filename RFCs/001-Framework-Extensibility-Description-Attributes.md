@@ -1,4 +1,4 @@
-# RFC 001- Framework Extensibility Description Attributes
+# RFC 001- Framework Extensibility for Description Attributes
 
 ## Summary
 This details the MSTest V2 framework extensibility for attributes that describe a test.  
