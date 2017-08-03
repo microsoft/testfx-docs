@@ -1,5 +1,18 @@
 # Release Notes
 
+## 1.2.0-beta
+Fixes part of this release:
+ 1. Support for Dynamic Data Attribute. [#141](https://github.com/Microsoft/testfx/issues/141) [extensibility]
+ 2. Make discovering test methods from base classes defined in another assembly the default. [#164](https://github.com/Microsoft/testfx/issues/164) [enhancement]
+ 3. CollectSourceInformation awareness to query source information . [#119](https://github.com/Microsoft/testfx/issues/119) [enhancement]
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.1.18...v1.2.0-beta)
+ 
+ ### Builds
+ 
+* MSTest.TestFramework: [1.2.0-beta](https://www.nuget.org/packages/MSTest.TestFramework/1.2.0-beta)
+* MSTest.TestAdapter: [1.2.0-beta](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.0-beta)
+
 ## 1.1.18
 Fixes part of this release:
  1. Ability to provide a reason for Ignored tests. [#126](https://github.com/Microsoft/testfx/issues/126) [enhancement]

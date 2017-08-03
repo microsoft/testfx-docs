@@ -1,4 +1,4 @@
-# RFC 003- Customize Running Tests
+# RFC 003- Framework Extensibility for Custom Test Execution
 
 ## Summary
 This document deals with how test runs can be customized using the MSTest V2 Framework extensibility.
