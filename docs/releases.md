@@ -1,5 +1,20 @@
 # Release Notes
 
+## 1.2.0-beta3
+Fixes part of this release:
+ 1. Added Mapping for TestOutcome.None to the UnitTestOutcome Enum to achieve NotExecuted behaviour in VSTS. [#217](https://github.com/Microsoft/testfx/issues/217) [Contributed By [Irguzhav](https://github.com/irguzhav)] [enhancement]
+ 2. TestMethod failures masked by TestCleanUp exceptions. [#58](https://github.com/Microsoft/testfx/issues/58)
+ 3. Multiple copies added for same test on running multiple times in IntelliTest. [#92](https://github.com/Microsoft/testfx/issues/92)
+ 4. Adapter is not sending TestCategory traits in Testcase object to Testhost. [#189](https://github.com/Microsoft/testfx/issues/189) 
+ 5. All the Assert constructor's has been made private and the classes sealed. [#223](https://github.com/Microsoft/testfx/issues/223)
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0-beta...v1.2.0-beta3)
+ 
+ ### Builds
+ 
+* MSTest.TestFramework: [1.2.0-beta3](https://www.nuget.org/packages/MSTest.TestFramework/1.2.0-beta3)
+* MSTest.TestAdapter: [1.2.0-beta3](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.0-beta3)
+
 ## 1.2.0-beta
 Fixes part of this release:
  1. Support for Dynamic Data Attribute. [#141](https://github.com/Microsoft/testfx/issues/141) [extensibility]
