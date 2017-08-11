@@ -47,6 +47,7 @@ There is no change in how DataSource Attribute will be consumed. Test methods ca
             var v = testContext.DataRow[0];
             Assert.AreEqual(v, "3");
         }
+```
 
 The display name of tests in the above example would appear like they used to be as :
 ```csharp
