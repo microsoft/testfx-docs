@@ -18,28 +18,28 @@ Also, currently DataSource Attribute does not follow Test Framework's custom dat
 ### Proposed solution
 The test adapter should define an interface class `ITestDataSource` (on similar lines of framework's ITestDataSource interface)which will be extended to get data from data source.
 ```csharp
-	namespace Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface
+namespace Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface
+{
+	/// <summary>
+	/// Interface that provides values from data source when data driven tests are run.
+	/// </summary>
+	public interface ITestDataSource
 	{
 		/// <summary>
-		/// Interface that provides values from data source when data driven tests are run.
+		/// Gets the test data from custom test data source and sets dbconnection in testContext object.
 		/// </summary>
-		public interface ITestDataSource
-		{
-			/// <summary>
-			/// Gets the test data from custom test data source and sets dbconnection in testContext object.
-			/// </summary>
-			/// <param name="testMethodInfo">
-			/// The info of test method.
-			/// </param>
-			/// <param name="testContext">
-			/// Test Context object
-			/// </param>
-			/// <returns>
-			/// Test data for calling test method.
-			/// </returns>
-			IEnumerable<object> GetData(UTF.ITestMethod testMethodInfo, ITestContext testContext);
-		}
+		/// <param name="testMethodInfo">
+		/// The info of test method.
+		/// </param>
+		/// <param name="testContext">
+		/// Test Context object
+		/// </param>
+		/// <returns>
+		/// Test data for calling test method.
+		/// </returns>
+		IEnumerable<object> GetData(UTF.ITestMethod testMethodInfo, ITestContext testContext);
 	}
+}
 ``` 
 There is no change in how DataSource Attribute will be consumed. Test methods can be decorated as they were decorated earlier like this:
 ```csharp
@@ -60,6 +60,7 @@ MyTestMethod (Data Row 1)
 ### Behaviour Changes in DataSource Attributes
 Presently, TestFrameworks's Execute() is called once for a data-driven TestMethod, which in-turn takes care of running test for all DataRows. This will be changed to calling TestFramework's Execute() for each DataRow. i.e. the logic of executing data-driven tests will be moved out from framework to adapter.
 
+
 ### Differences between DataSource Attribute and ITestDataSource
 | DataSource                                        | ITestDataSource                                        |
 |---------------------------------------------------|--------------------------------------------------------|
@@ -68,6 +69,7 @@ Presently, TestFrameworks's Execute() is called once for a data-driven TestMetho
 
 Note :
 Test authors should not expect data to be set in TestContext for attributes inheriting from ITestDataSource. Going forward, data should only be consumed from Testmethod parameters for data-driven tests. 
+
 
 ### Support Scenarios
 Following scenarios will not supported in case of DataSource Attributes :
