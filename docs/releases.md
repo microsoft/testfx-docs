@@ -1,5 +1,20 @@
 # Release Notes
 
+## 1.2.0
+Fixes part of this release:
+ 1. DataSourceAttribute Implementation (#238)
+ 2. Adding support for DiaNavigation in UWP test adapter (#258)
+ 3. Wrong order of arguments to ArgumentException (#262)
+ 4. Adding filtering support at discovery (#271)
+ 5. Improve handling of Assert.Inconclusive (#277)
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0-beta3...v1.2.0)
+
+### Builds
+ 
+* MSTest.TestFramework: [1.2.0](https://www.nuget.org/packages/MSTest.TestFramework/1.2.0)
+* MSTest.TestAdapter: [1.2.0](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.0)
+
 ## 1.2.0-beta3
 Fixes part of this release:
  1. Added Mapping for TestOutcome.None to the UnitTestOutcome Enum to achieve NotExecuted behaviour in VSTS. [#217](https://github.com/Microsoft/testfx/issues/217) [Contributed By [Irguzhav](https://github.com/irguzhav)] [enhancement]
