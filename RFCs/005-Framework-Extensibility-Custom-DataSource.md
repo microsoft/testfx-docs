@@ -78,7 +78,7 @@ Users can customize the display name of tests in test results by overriding `Get
 
 The display name of tests in the above example would appear as :
 ```csharp
-MyFavMSTestV2Test (1,3,3)
+MyFavMSTestV2Test (1,2,3)
 MyFavMSTestV2Test (4,5,6)
 ```
 
