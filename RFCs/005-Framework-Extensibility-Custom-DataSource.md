@@ -9,7 +9,7 @@ Often times, custom data sources are required for data driven tests. User should
 ## Detailed Design
 
 ### Requirements
-1. A cusotm data source can be used by multiple test cases. 
+1. A custom data source can be used by multiple test cases. 
 2. A test case can have multiple data sources.
 
 ### Proposed solution
