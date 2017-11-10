@@ -11,16 +11,15 @@ This document is about providing __finer-grained control__ over parallel executi
 1. **Easy onboarding** - it should be possible to enable parallel execution for existing MSTest V2 code. For e.g. there might be 10s of 100s of test projects participating in a test run - insisting that all of them make changes to their source code to enable parallelism is a barrier to onbarding the feature.
 2. **Fine grained control** - there might still be certain assemblies, or test classes or test methods within the assembly, that might not be ready for execution in parallel. It should be possible for such artifacts to opt-out of parallel execution. Conversly, there might be only a few assemblies that want to opt-in to parallel execution - that should also be possible.
 3. **Override** - Parallel execution will have an impact on data collectors. Since test execution will be in parallel, the start/end events marking the execution of a particular test might get interleaved with those of any other test that might be executing in parallel. Therefore it shoud be possible for a feature that requires data collection to override and OFF all parallel execution. An example of a feature that might want to do this would be TIA (Test Impact Analysis).
-4. **Test lifecycle semanctics** - we will need to clarify the semantics to the various xxxInitialize/xxxCleanup methods.
+4. **Test lifecycle semantics** - we will need to clarify the semantics to the various xxxInitialize/xxxCleanup methods.
 
 ## Approach
-1. This simplest way to enable in-assembly parallel execution is to enable it globally for all MSTest V2 test assemblies using a .runsettings file as follows:
+This simplest way to enable in-assembly parallel execution is to enable it globally for all MSTest V2 test assemblies using a .runsettings file as follows:
 ```xml
 <RunSettings>
 <!-- MSTest adapter -->  
   <MSTest>
     <Parallelize>
-      <Enable=true />
       <Workers=4 />
       <Scope = TestClass />
     </Parallelize>
@@ -31,13 +30,13 @@ From the CLI these values can be provided using the "--" syntax.
 
 This is as if every assembly were annotated with the following:
 ```csharp
-[assembly: Parallelize(enabled = true, Workers = 4, Scope = ExecutionScope.TestClass)]
+[assembly: Parallelize(Workers = 4, Scope = ExecutionScope.TestClass)]
 ```
 
 Parallel execution will be realized by spawning the appropriate number of worker threads (4), and handing them tests at the specified scope.
 
 There will be 3 scopes of parallelization supported:
-- TestClass - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially
+- TestClass - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially. This will be the default - tests witin a class might have interdependency, and we don't want to be too aggressive.
 - TestMethod - each thread of execution will be handed TestMethods to execute.
 - Custom - the user will provide plugins implementing the required execution semantics. This will be covered in a separate RFC. 
 
@@ -62,6 +61,12 @@ This can be specified via a .runsettings as a global override to turn OFF parall
   </RunConfiguration>
 </RunSettings>
 ```
+
+Test lifecyle method semantics
+- AssemblyInitialize/Cleanup shall be run only once per assembly (irrespective of parallel or not).
+- ClassInitialize/Cleanup shall be run only once per class (irrespective of parallel or not).
+- TestInitialize/Cleanup shall be run only once per method.
+
 
 ## Notes
 1. It will up to the user to ensure that the tests are parallel-ready before enabling parallel test execution.
