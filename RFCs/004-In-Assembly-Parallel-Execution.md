@@ -14,13 +14,13 @@ This document is about providing __finer-grained control__ over parallel executi
 4. **Test lifecycle semantics** - we will need to clarify the semantics to the various xxxInitialize/xxxCleanup methods.
 
 ## Approach
-This simplest way to enable in-assembly parallel execution is to enable it globally for all MSTest V2 test assemblies using a .runsettings file as follows:
+The simplest way to enable in-assembly parallel execution is to enable it globally for all MSTest V2 test assemblies using a .runsettings file as follows:
 ```xml
 <RunSettings>
 <!-- MSTest adapter -->  
   <MSTest>
     <Parallelize>
-      <Workers=4 />
+      <Workers = 4 />
       <Scope = TestClass />
     </Parallelize>
   </MSTest>
