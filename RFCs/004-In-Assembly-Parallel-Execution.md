@@ -20,8 +20,8 @@ The simplest way to enable in-assembly parallel execution is to enable it global
 <!-- MSTest adapter -->  
   <MSTest>
     <Parallelize>
-      <Workers = 4 />
-      <Scope = TestClass />
+      <Workers>4</Workers>
+      <Scope>ClassLevel</Scope>
     </Parallelize>
   </MSTest>
 </RunSettings>
@@ -30,14 +30,14 @@ From the CLI these values can be provided using the "--" syntax.
 
 This is as if every assembly were annotated with the following:
 ```csharp
-[assembly: Parallelize(Workers = 4, Scope = ExecutionScope.TestClass)]
+[assembly: Parallelize(Workers = 4, Scope = ExecutionScope.ClassLevel)]
 ```
 
 Parallel execution will be realized by spawning the appropriate number of worker threads (4), and handing them tests at the specified scope.
 
 There will be 3 scopes of parallelization supported:
-- TestClass - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially. This will be the default - tests witin a class might have interdependency, and we don't want to be too aggressive.
-- TestMethod - each thread of execution will be handed TestMethods to execute.
+- ClassLevel - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially. This will be the default - tests witin a class might have interdependency, and we don't want to be too aggressive.
+- MethodLevel - each thread of execution will be handed TestMethods to execute.
 - Custom - the user will provide plugins implementing the required execution semantics. This will be covered in a separate RFC. 
 
 The value for the number of worker threads to spawn to execute tests can be set using a single assembly level attribute that will take a parameter whose values can be as follows:
