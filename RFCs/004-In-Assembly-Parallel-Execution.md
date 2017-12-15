@@ -51,7 +51,7 @@ When used at the assembly level, all tests within the assembly will be executed 
 When used at the Class level, all tests within the class will be executed serially after the parallel execution of all other tests is completed.
 When used at the Method level, the test method will be executed serially after the parallel execution of all other tests is completed.
 
-Finally, just as in-assembly parallel execution can be disabled globally via the .runsettings file. This can be specified via a .runsettings as a global override to turn OFF parallelization as follows:
+Finally, just as in-assembly parallel execution can be enabled globally via the .runsettings file, it can be also be disabled globally as follows:
 ```xml
 <RunSettings>  
   <!-- Configurations that affect the Test Framework -->  
