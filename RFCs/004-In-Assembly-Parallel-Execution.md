@@ -1,5 +1,4 @@
 # RFC 004 - In-assembly Parallel Execution
-
 ## Motivation
 The key motivation is to complete the execution of a suite of tests, within a single container, faster.
 
@@ -52,12 +51,12 @@ When used at the assembly level, all tests within the assembly will be executed 
 When used at the Class level, all tests within the class will be executed serially after the parallel execution of all other tests is completed.
 When used at the Method level, the test method will be executed serially after the parallel execution of all other tests is completed.
 
-This can be specified via a .runsettings as a global override to turn OFF parallelization as follows:
+Finally, just as in-assembly parallel execution can be disabled globally via the .runsettings file. This can be specified via a .runsettings as a global override to turn OFF parallelization as follows:
 ```xml
 <RunSettings>  
   <!-- Configurations that affect the Test Framework -->  
-  <RunConfiguration>  
-    <DoNotParallelize/> 
+  <RunConfiguration>
+    <DisableParallelization>true</DisableParallelization>
   </RunConfiguration>
 </RunSettings>
 ```
