@@ -66,6 +66,52 @@ Test lifecyle method semantics
 - ClassInitialize/Cleanup shall be run only once per class (irrespective of parallel or not).
 - TestInitialize/Cleanup shall be run only once per method.
 
+## Conditioning in-assembly parallel execution - composition rules
+In-assembly parallel execution can be conditioned using the following means:
+1. as annotations in source code (as described in this document).
+2. as configuration properties set via a .runsettings file [[see here for more]](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md).
+3. by passing runsettings arguments via the command line [[see here for more]](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+
+(3) overrides (2) which in turn overrides (1). The ```[DoNotParallelize()]``` annotation may be applied only to source code, and hence remains unaffected by these rules - thus, even if in-assembly parallel execution in conditioned via (2) or (3), specific program elements can still opt-out safely.
+
+### Example
+Consider an assembly UTA1.dll that has a 2 test classes TC1 and TC2 as follows:
+```
+[assembly: Parallelize(Workers = 3, Scope = ExecutionScope.ClassLevel)]
+...
+[TestClass]
+public class TC1
+{
+...
+}
+
+[TestClass]
+[DoNotParallelize()]  // this test class is opting out
+public class TC2
+{
+...
+}
+```
+
+Furthermore, consider the follwing test.runsettings file:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- MSTest adapter -->
+  <MSTest>
+    <Parallelize>
+      <Workers>4</Workers>
+      <Scope>ClassLevel</Scope>
+    </Parallelize>
+  </MSTest>
+</RunSettings>
+```
+Here is the effective conditioning for the following sample invocations:
+1. ```vstest.console.exe uta1.dll```: Workers = 3, Scope = ExecutionScope.ClassLevel. TC2 is opted out.
+2. ```vstest.console.exe uta1.dll /settings:test.runsettings```: Workers = 4, Scope = ExecutionScope.ClassLevel. TC2 is opted out.
+3. ```vstest.console.exe uta1.dll /settings:test.runsettings -- MSTest.Parallelize.Workers=4 MSTest.Parallelize.Scope=MethodLevel```: Workers = 4, Scope = ExecutionScope.MethodLevel. TC2 is opted out.
+
+
 
 ## Notes
 1. It will up to the user to ensure that the tests are parallel-ready before enabling parallel test execution.
