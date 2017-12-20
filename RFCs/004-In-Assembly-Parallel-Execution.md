@@ -110,8 +110,7 @@ Here is the effective conditioning for the following sample invocations:
 1. ```vstest.console.exe uta1.dll```: Workers = 3, Scope = ExecutionScope.ClassLevel. TC2 is opted out.
 2. ```vstest.console.exe uta1.dll /settings:test.runsettings```: Workers = 4, Scope = ExecutionScope.ClassLevel. TC2 is opted out.
 3. ```vstest.console.exe uta1.dll /settings:test.runsettings -- MSTest.Parallelize.Workers=4 MSTest.Parallelize.Scope=MethodLevel```: Workers = 4, Scope = ExecutionScope.MethodLevel. TC2 is opted out.
-
-
+4. ```vstest.console.exe uta1.dll -- RunConfiguration.DisableParallelization=true```: globally disables in-assembly parallel execution.
 
 ## Notes
 1. It will up to the user to ensure that the tests are parallel-ready before enabling parallel test execution.
