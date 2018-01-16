@@ -1,5 +1,23 @@
 # Release Notes
 
+## 1.3.0-beta2
+Fixes part of this release:
+ 1. In-Assembly Parallel Feature. [#296](https://github.com/Microsoft/testfx/pull/296)
+ 2. Add missing Microsoft.Internal.TestPlatform.ObjectModel [#301](https://github.com/Microsoft/testfx/pull/301) [Contributed by [Andrey Kurdyumov](https://github.com/kant2002)]
+ 3. Adding warning message for vsmdi file [#61](https://github.com/Microsoft/testfx/issues/61)
+ 4. Fixing Key collision for test run parameters [#298](https://github.com/Microsoft/testfx/issues/298)
+ 5. Fix for csv x64 scenario [#325](https://github.com/Microsoft/testfx/issues/325)
+ 6. DataRow DisplayName Fix in .Net framework [#284](https://github.com/Microsoft/testfx/issues/284)
+ 7. Update File version for adapter and framework dlls [#268](https://github.com/Microsoft/testfx/issues/268)
+ 8. Add information about which assembly failed to discover test [#299](https://github.com/Microsoft/testfx/pull/299) [Contributed by [Andrey Kurdyumov](https://github.com/kant2002)]
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0...v1.3.0-beta2)
+
+### Builds
+ 
+* MSTest.TestFramework: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestFramework/1.3.0-beta2)
+* MSTest.TestAdapter: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.0-beta2)
+
 ## 1.2.0
 Fixes part of this release:
  1. DataSourceAttribute Implementation (#238)
