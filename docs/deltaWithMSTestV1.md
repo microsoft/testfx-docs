@@ -23,5 +23,5 @@ Here are the features that are not supported:
 1.	Tests cannot be included into an "Ordered Test".
 2.	The adapter does not support being configured via a .testsettings file.
 3.	The adapter does not support test lists specified as a .vsmdi file.
-4.	CodedUITest/Web and Load Test are not supported.
+4.	The "Coded UI Test Project", and the "Web Performance and Load Test Project" types are not supported.
 5.	Association with a testcase item in TFS is not supported.
