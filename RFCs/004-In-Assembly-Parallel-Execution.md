@@ -7,9 +7,9 @@ Coarse-grained parallelization is already supported by vstest, and is available 
 This document is about providing __finer-grained control__ over parallel execution __via in-assembly parallel execution of tests__ – it enables running tests within an assembly in parallel.
 
 ## Requirements:
-1. **Easy onboarding** - it should be possible to enable parallel execution for existing MSTest V2 code. For e.g. there might be 10s of 100s of test projects participating in a test run - insisting that all of them make changes to their source code to enable parallelism is a barrier to onbarding the feature.
-2. **Fine grained control** - there might still be certain assemblies, or test classes or test methods within the assembly, that might not be ready for execution in parallel. It should be possible for such artifacts to opt-out of parallel execution. Conversly, there might be only a few assemblies that want to opt-in to parallel execution - that should also be possible.
-3. **Override** - Parallel execution will have an impact on data collectors. Since test execution will be in parallel, the start/end events marking the execution of a particular test might get interleaved with those of any other test that might be executing in parallel. Therefore it shoud be possible for a feature that requires data collection to override and OFF all parallel execution. An example of a feature that might want to do this would be TIA (Test Impact Analysis).
+1. **Easy onboarding** - it should be possible to enable parallel execution for existing MSTest V2 code. For e.g. there might be 10s of 100s of test projects participating in a test run - insisting that all of them make changes to their source code to enable parallelism is a barrier to onboarding the feature.
+2. **Fine grained control** - there might still be certain assemblies, or test classes or test methods within the assembly, that might not be ready for execution in parallel. It should be possible for such artifacts to opt-out of parallel execution. Conversely, there might be only a few assemblies that want to opt-in to parallel execution - that should also be possible.
+3. **Override** - Parallel execution will have an impact on data collectors. Since test execution will be in parallel, the start/end events marking the execution of a particular test might get interleaved with those of any other test that might be executing in parallel. Therefore it should be possible for a feature that requires data collection to override and OFF all parallel execution. An example of a feature that might want to do this would be TIA (Test Impact Analysis).
 4. **Test lifecycle semantics** - we will need to clarify the semantics to the various xxxInitialize/xxxCleanup methods.
 
 ## Approach
@@ -35,7 +35,7 @@ This is as if every assembly were annotated with the following:
 Parallel execution will be realized by spawning the appropriate number of worker threads (4), and handing them tests at the specified scope.
 
 There will be 3 scopes of parallelization supported:
-- ClassLevel - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially. This will be the default - tests witin a class might have interdependency, and we don't want to be too aggressive.
+- ClassLevel - each thread of execution will be handed a TestClass worth of tests to execute. Within the TestClass, the test methods will execute serially. This will be the default - tests within a class might have interdependency, and we don't want to be too aggressive.
 - MethodLevel - each thread of execution will be handed TestMethods to execute.
 - Custom - the user will provide plugins implementing the required execution semantics. This will be covered in a separate RFC. 
 
@@ -93,7 +93,7 @@ public class TC2
 }
 ```
 
-Furthermore, consider the follwing test.runsettings file:
+Furthermore, consider the following test.runsettings file:
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
@@ -114,5 +114,5 @@ Here is the effective conditioning for the following sample invocations:
 
 ## Notes
 1. It will up to the user to ensure that the tests are parallel-ready before enabling parallel test execution.
-2. Features that rely on data collectors will need to globally turn OFF parallel execution. They can do so by either crafting a .runsettings file as shown above, or by passing the the "--"syntax from the CLI. For e.g. the VSTest task with Test Impact Analysis ON will need to do this when invoking vstest runner.
+2. Features that rely on data collectors will need to globally turn OFF parallel execution. They can do so by either crafting a .runsettings file as shown above, or by passing the "--"syntax from the CLI. For e.g. the VSTest task with Test Impact Analysis ON will need to do this when invoking vstest runner.
 3. Diagnosing test failures during parallel execution will require appropriately formatted logging. The adapter should take care to straighten out the logs and emit them appropriately formatted.
