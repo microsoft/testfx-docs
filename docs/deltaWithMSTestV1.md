@@ -1,4 +1,7 @@
-## Behaviour changes w.r.t MSTest V1
+## MSTest V2 feature additions
+For specific features and bug fixes in each version of MSTest V2, please see the [release notes](releases.md).
+
+## High level behaviour changes w.r.t MSTest V1
 Listed are the difference in behaviour of MSTest V2 w.r.t MSTest V1 :
 1.	MSTest V2 sets the direction for how we intend to evolve the MSTest framework [[more...]](https://blogs.msdn.microsoft.com/devops/2016/06/17/taking-the-mstest-framework-forward-with-mstest-v2/).
 2.	MSTest V2 is "open source" [[more...]](https://blogs.msdn.microsoft.com/devops/2017/04/05/mstest-v2-is-open-source/).
