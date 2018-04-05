@@ -18,6 +18,18 @@ Fixes part of this release:
 * MSTest.TestFramework: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestFramework/1.3.0-beta2)
 * MSTest.TestAdapter: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.0-beta2)
 
+## 1.2.1
+Fixes part of this release:
+ 1. Fixing Key collision for test run parameters [#328](https://github.com/Microsoft/testfx/pull/328)
+ 2. Don't call Class Cleanup if Class Init not called [#372](https://github.com/Microsoft/testfx/pull/372)
+ 3. Fix masking assembly load failure error message [#382](https://github.com/Microsoft/testfx/pull/382)
+ 4. Fix UWP tests discovery. [#332](https://github.com/Microsoft/testfx/pull/332)
+ 
+### Builds
+ 
+* MSTest.TestFramework: [1.2.1](https://www.nuget.org/packages/MSTest.TestFramework/1.2.1)
+* MSTest.TestAdapter: [1.2.1](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.1)
+
 ## 1.2.0
 Fixes part of this release:
  1. DataSourceAttribute Implementation (#238)
