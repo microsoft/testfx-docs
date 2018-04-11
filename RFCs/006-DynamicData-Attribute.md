@@ -85,7 +85,7 @@ Optionally, to provide a custom name for each data driven test case, `DynamicDat
 `DynamicDataDisplayNameDeclaringType` should be used in cases where the dynamic data display name method exists in a class other than the test class 
 
 ```csharp
-    [DynamicData("ReusableTestDataMethod", DynamicDataDisplayName = "GetCustomDynamicDataDisplayName", DynamicDataDisplayNameDeclaringType = type(UnitTests))]
+    [DynamicData("ReusableTestDataMethod", DynamicDataDisplayName = "GetCustomDynamicDataDisplayName", DynamicDataDisplayNameDeclaringType = typeOf(UnitTests))]
 ```
 
 ### Benefits of using DynamicData attribute
