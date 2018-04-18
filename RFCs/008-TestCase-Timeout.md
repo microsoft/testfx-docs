@@ -10,7 +10,7 @@ Here is a sample runsettings: 
 ```
 	<Runsettings> 
 		 <MSTestV2> 
-			<TestTimeout>5000<TestTimeout>   
+			<TestTimeout>5000</TestTimeout>   
 		 </MSTestV2> 
 	</Runsettings> 
 ```
@@ -18,4 +18,4 @@ Here is a sample runsettings: 
 ### Honoring the settings 
 - If no settings are provided in runsettings, default timeout is set to 0. 
 - Timeout specified via Timeout attribute on TestMethod takes precedence over the global timeout specified via runsettings. 
-- For all the test methods that do not have Timeout attribute, timeout based on the timeout specified via runsettings.
+- For all the test methods that do not have Timeout attribute, timeout will be based on the timeout specified via runsettings.
