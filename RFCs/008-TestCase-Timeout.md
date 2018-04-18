@@ -1,4 +1,4 @@
-# RFC 007- Test case timeout via runsettings
+# RFC 008 - Test case timeout via runsettings
 
 ## Motivation
 User should be able to configure global test case timeout for all the test cases part of the run. 
