@@ -1,5 +1,22 @@
 # Release Notes
 
+## 1.3.0
+Fixes part of this release:
+ 1. TestTimeout configurable via RunSettings [#373](https://github.com/Microsoft/testfx/pull/403) [enhancement] 
+ 2. Customize display name for DynamicDataAttribute [#373](https://github.com/Microsoft/testfx/pull/373) [Contributed by [Brad Stoney](https://github.com/bstoney)] [enhancement]
+ 3. Fix incompatibility between multiple versions of mstest adapter present in a solution [#404](https://github.com/Microsoft/testfx/pull/404)
+ 4. Fix multiple results not returning for custom TestMethod [#363](https://github.com/Microsoft/testfx/pull/363) [Contributed by [Cédric Bignon](https://github.com/bignoncedric)]
+ 5. Run Class Cleanup in sync with Class Initialize [#372](https://github.com/Microsoft/testfx/pull/372)
+ 6. Fix to show right error message on assembly load exception during test run [#395](https://github.com/Microsoft/testfx/issues/395)
+ 7. Consistent behavior of GenericParameterHelper's while running and debugging [#362](https://github.com/Microsoft/testfx/issues/362) [Contributed by [walterlv](https://github.com/walterlv)]
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.1...v1.3.0)
+
+### Builds
+ 
+* MSTest.TestFramework: [1.3.0](https://www.nuget.org/packages/MSTest.TestFramework/1.3.0)
+* MSTest.TestAdapter: [1.3.0](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.0)
+
 ## 1.3.0-beta2
 Fixes part of this release:
  1. In-Assembly Parallel Feature. [#296](https://github.com/Microsoft/testfx/pull/296)
