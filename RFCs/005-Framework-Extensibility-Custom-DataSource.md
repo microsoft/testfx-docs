@@ -9,7 +9,7 @@ Often times, custom data sources are required for data driven tests. User should
 ## Detailed Design
 
 ### Requirements
-1. A cusotm data source can be used by multiple test cases. 
+1. A custom data source can be used by multiple test cases. 
 2. A test case can have multiple data sources.
 
 ### Proposed solution
@@ -78,7 +78,7 @@ Users can customize the display name of tests in test results by overriding `Get
 
 The display name of tests in the above example would appear as :
 ```csharp
-MyFavMSTestV2Test (1,3,3)
+MyFavMSTestV2Test (1,2,3)
 MyFavMSTestV2Test (4,5,6)
 ```
 

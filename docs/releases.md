@@ -1,5 +1,65 @@
 # Release Notes
 
+## 1.3.0-beta2
+Fixes part of this release:
+ 1. In-Assembly Parallel Feature. [#296](https://github.com/Microsoft/testfx/pull/296)
+ 2. Add missing Microsoft.Internal.TestPlatform.ObjectModel [#301](https://github.com/Microsoft/testfx/pull/301) [Contributed by [Andrey Kurdyumov](https://github.com/kant2002)]
+ 3. Adding warning message for vsmdi file [#61](https://github.com/Microsoft/testfx/issues/61)
+ 4. Fixing Key collision for test run parameters [#298](https://github.com/Microsoft/testfx/issues/298)
+ 5. Fix for csv x64 scenario [#325](https://github.com/Microsoft/testfx/issues/325)
+ 6. DataRow DisplayName Fix in .Net framework [#284](https://github.com/Microsoft/testfx/issues/284)
+ 7. Update File version for adapter and framework dlls [#268](https://github.com/Microsoft/testfx/issues/268)
+ 8. Add information about which assembly failed to discover test [#299](https://github.com/Microsoft/testfx/pull/299) [Contributed by [Andrey Kurdyumov](https://github.com/kant2002)]
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0...v1.3.0-beta2)
+
+### Builds
+ 
+* MSTest.TestFramework: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestFramework/1.3.0-beta2)
+* MSTest.TestAdapter: [1.3.0-beta2](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.0-beta2)
+
+## 1.2.1
+Fixes part of this release:
+ 1. Fixing Key collision for test run parameters [#328](https://github.com/Microsoft/testfx/pull/328)
+ 2. Don't call Class Cleanup if Class Init not called [#372](https://github.com/Microsoft/testfx/pull/372)
+ 3. Fix masking assembly load failure error message [#382](https://github.com/Microsoft/testfx/pull/382)
+ 4. Fix UWP tests discovery. [#332](https://github.com/Microsoft/testfx/pull/332)
+ 
+### Builds
+ 
+* MSTest.TestFramework: [1.2.1](https://www.nuget.org/packages/MSTest.TestFramework/1.2.1)
+* MSTest.TestAdapter: [1.2.1](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.1)
+
+## 1.2.0
+Fixes part of this release:
+ 1. DataSourceAttribute Implementation (#238)
+ 2. Adding support for DiaNavigation in UWP test adapter (#258)
+ 3. Wrong order of arguments to ArgumentException (#262)
+ 4. Adding filtering support at discovery (#271)
+ 5. Improve handling of Assert.Inconclusive (#277)
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0-beta3...v1.2.0)
+
+### Builds
+ 
+* MSTest.TestFramework: [1.2.0](https://www.nuget.org/packages/MSTest.TestFramework/1.2.0)
+* MSTest.TestAdapter: [1.2.0](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.0)
+
+## 1.2.0-beta3
+Fixes part of this release:
+ 1. Added Mapping for TestOutcome.None to the UnitTestOutcome Enum to achieve NotExecuted behaviour in VSTS. [#217](https://github.com/Microsoft/testfx/issues/217) [Contributed By [Irguzhav](https://github.com/irguzhav)] [enhancement]
+ 2. TestMethod failures masked by TestCleanUp exceptions. [#58](https://github.com/Microsoft/testfx/issues/58)
+ 3. Multiple copies added for same test on running multiple times in IntelliTest. [#92](https://github.com/Microsoft/testfx/issues/92)
+ 4. Adapter is not sending TestCategory traits in Testcase object to Testhost. [#189](https://github.com/Microsoft/testfx/issues/189) 
+ 5. All the Assert constructor's has been made private and the classes sealed. [#223](https://github.com/Microsoft/testfx/issues/223)
+ 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.2.0-beta...v1.2.0-beta3)
+ 
+ ### Builds
+ 
+* MSTest.TestFramework: [1.2.0-beta3](https://www.nuget.org/packages/MSTest.TestFramework/1.2.0-beta3)
+* MSTest.TestAdapter: [1.2.0-beta3](https://www.nuget.org/packages/MSTest.TestAdapter/1.2.0-beta3)
+
 ## 1.2.0-beta
 Fixes part of this release:
  1. Support for Dynamic Data Attribute. [#141](https://github.com/Microsoft/testfx/issues/141) [extensibility]
