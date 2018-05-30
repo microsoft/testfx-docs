@@ -1,9 +1,7 @@
 # Releases
 # Future
- - Changes to integrate with the performance improvements from the [vstest platform](https://github.com/Microsoft/vstest)
-   - Pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
-   - Optimizing the set of adapters that are loaded and initialized [[RFC]](https://github.com/Microsoft/vstest-docs/pull/125)
- - Conforming to Guidelines for a TestCase's FullyQualifiedName [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
+ - Changes to integrate with the performance improvements related to pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
+ - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
  
 # 1.3.0 (May 2018)
  - [x] [TestTimeout configurable via RunSettings](https://github.com/Microsoft/testfx/pull/403) [enhancement] 
