@@ -8,7 +8,12 @@ MSTest V2 API documentation is available [here](https://docs.microsoft.com/en-us
  - [Framework Extensibility for Custom Assertions](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/002-Framework-Extensibility-Custom-Assertions.md)
  - [Customize Running tests](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/003-Customize-Running-Tests.md)
  - [In-assembly parallel execution](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/004-In-Assembly-Parallel-Execution.md)
- - [Roadmap](https://github.com/Microsoft/testfx-docs/blob/master/roadmap.md)
+ - [Framework extensibilty for custom data source](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/005-Framework-Extensibility-Custom-DataSource.md)
+ - [DynamicData Attribute for Data Driven Tests](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/006-DynamicData-Attribute.md)
+ - [DataSource Attribute Vs ITestDataSource](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/007-DataSource-Attribute-VS-ITestDataSource.md)
+ - [Test case timeout via runsettings](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/008-TestCase-Timeout.md)
+ - [Deltas from MSTest v1](https://github.com/Microsoft/testfx-docs/blob/master/docs/deltaWithMSTestV1.md)
+ - [Releases](https://github.com/Microsoft/testfx-docs/blob/master/docs/releases.md)
 
 ### Contributing
 There are many ways to contribute to VSTest
