@@ -7,6 +7,8 @@
  - [x] [AppDomain creation should honor runsettings ](https://github.com/Microsoft/testfx/pull/427)
  - [x] [Don't delete resource folder while clean/rebuild ](https://github.com/Microsoft/testfx/pull/424) 
 
+ A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.3.0...v1.3.1)
+ 
 ### Builds
 * MSTest.TestFramework: [1.3.1](https://www.nuget.org/packages/MSTest.TestFramework/1.3.1)
 * MSTest.TestAdapter: [1.3.1](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.1)
