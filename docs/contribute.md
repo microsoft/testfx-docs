@@ -7,7 +7,8 @@ Please install `Visual Studio 2017` with the following workloads:
 - `.Net desktop development`
 - `Universal Windows Platform development`
    - `Windows 10 SDK (10.0.14393.0)`
-     ![workload components screenshot for UWP](images/uwp-version.png)
+     
+  ![workload components screenshot for UWP](images/uwp-version.png)
 - `.Net Core cross-platform development`
 
 See download
