@@ -3,7 +3,14 @@
 This article will help you build, test and consume local builds of the MSTest Framework and Adapter.
 
 ## Prerequisites
-Please install `Visual Studio 2017` with the `.Net desktop development`, `Universal Windows Platform development` and `.Net Core cross-platform development` workloads installed. See download
+Please install `Visual Studio 2017` with the following workloads:
+- `.Net desktop development`
+- `Universal Windows Platform development`
+   - `Windows 10 SDK (10.0.14393.0)`
+     ![workload components screenshot for UWP](images/uwp-version.png)
+- `.Net Core cross-platform development`
+
+See download
 link [here](https://www.microsoft.com/net/core#windowsvs2017).
 
 Clone the repository to a local directory. 
@@ -79,6 +86,7 @@ All the tests in the testfx repo can be run via the `Visual Studio Test Explorer
 A specific type of tests can be run by providing a search filter in the Test Explorer window.
 For instance to run unit tests use `project:"Unit"`. For running smoke tests, use the `project:"Smoke"` filter.
 
+![screenshot filter unit tests](images/test-explorer-filter-unit.png)
 ### Running tests with command line(CLI)
 
 To execute tests via command line, run the following command:
