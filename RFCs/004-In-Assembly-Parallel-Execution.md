@@ -116,3 +116,4 @@ Here is the effective conditioning for the following sample invocations:
 1. It will up to the user to ensure that the tests are parallel-ready before enabling parallel test execution.
 2. Features that rely on data collectors will need to globally turn OFF parallel execution. They can do so by either crafting a .runsettings file as shown above, or by passing the "--"syntax from the CLI. For e.g. the VSTest task with Test Impact Analysis ON will need to do this when invoking vstest runner.
 3. Diagnosing test failures during parallel execution will require appropriately formatted logging. The adapter should take care to straighten out the logs and emit them appropriately formatted.
+4. Execution of data driven tests will not be parallelized - i.e. parallelizing over DataRow attributes is not supported.
