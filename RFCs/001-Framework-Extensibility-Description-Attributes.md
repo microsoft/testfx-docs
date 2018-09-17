@@ -46,33 +46,34 @@ The test framework currently has a TestProperty attribute which can be used to d
         public string Value { get; }
     }
 ``` 
-Here is how the test methods are decorated with this attribute:
+
+Let's say TraitProperty is an attribute that inherits from TestPropertyAttribute. Here is how the test methods are decorated with this attribute:
 ```csharp
         [TestMethod]
-        [TestProperty("WorkItem","234")]
+        [TestProperty("TraitProperty","234")]
         public void TestMethod()
         {
         }
 ```
 Users can then filter tests in VS IDE Test Explorer based on this Test Property. The query string that would filter the test above would look like 
 ```
-Trait:"WorkItem" Trait:"234"
+Trait:"TraitProperty" Trait:"234"
 ```
 This TestProperty is also filled into the TestPlatform's TestCase object which makes it available for reporting in the various loggers that can be plugged into the TestPlatform. 
 
 To provide extension writers with the ability to have strongly typed attributes to achieve what TestProperty above achieves, the proposal is to make TestProperty a non-sealed class allowing classes to extend it like below:
 ```csharp
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-    public class WorkItemAttribute : TestPropertyAttribute
+    public class TraitPropertyAttribute : TestPropertyAttribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemAttribute"/> class.
+        /// Initializes a new instance of the <see cref="TraitPropertyAttribute"/> class.
         /// </summary>
-        /// <param name="workItemId">
-        /// The Id of the workitem.
+        /// <param name="traitData">
+        /// Data associated with trait property
         /// </param>
-        public WorkItemAttribute(int workItemId)
-            : base ("WorkItem", workItemId.ToString())
+        public TraitPropertyAttribute(int traitData)
+            : base ("TraitProperty", traitData.ToString())
         {
         }
     }
@@ -80,7 +81,7 @@ To provide extension writers with the ability to have strongly typed attributes 
 And test methods would be decorated in a much more convenient form as below:
 ```csharp
         [TestMethod]
-        [WorkItem(234)]
+        [TraitProperty(234)]
         public void TestMethod()
         {
         }
@@ -88,8 +89,7 @@ And test methods would be decorated in a much more convenient form as below:
 This would provide extension writers with the same level of functionality that TestProperty already has with filtering and reporting plus the added ease of having a strongly typed description.  
 
 ### Requirements from Test Platform
-1. The attributes that were already part of MSTest V1(Description, WorkItem, CssIteration and CssProjectStructure) should be part of the trx logger output. Currently only owner and priority are part of the trx log.
-2. Custom attributes should also show up in the trx logger. This is a bigger change since it might require changes in the trx schema.
+1. Custom attributes should also show up in the trx logger. This is a bigger change since it might require changes in the trx schema.
 
 ## Open Questions
 1. Should this attribute be opened up to be at a class and assembly level like TestCategory Attribute?
