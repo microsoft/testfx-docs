@@ -187,7 +187,8 @@ public class IterativeTestClassAttribute : TestClassAttribute
 
     public override TestMethodAttribute GetTestMethodAttribute(TestMethodAttribute testMethodAttribute)
     {
-        if (testMethodAttribute is IterativeTestMethodAttribute) return testMethodAttribute;
+        if (testMethodAttribute is IterativeTestMethodAttribute)
+            return testMethodAttribute;
 
         return new IterativeTestMethodAttribute(this.stabilityThreshold);
     }

@@ -1,7 +1,7 @@
 # RFC 007- DataSource Attribute Vs ITestDataSource
 
 ## Summary
-This details the MSTest V2 framework attribute "DataSource" for data driven tests where test data can be present in an excel file, xml file, sql database or OleDb. You can refer msdn documentation here[https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.datasourceattribute.aspx] for more details.
+This details the MSTest V2 framework attribute "DataSource" for data driven tests where test data can be present in an excel file, xml file, sql database or OleDb. You can refer msdn documentation [here](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.datasourceattribute.aspx) for more details.
 
 ## Motivation
 At present, there are two codeflows for data-driven tests, one for DataSource Attribute and another for DataRow & DynamicData Attributes. This aims to have one common codeflow for handling data-driven tests.
@@ -43,23 +43,23 @@ namespace Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Int
 ``` 
 There is no change in how DataSource Attribute will be consumed. Test methods can be decorated as they were decorated earlier like this:
 ```csharp
-        [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "MyFile.xml", "MyTable", DataAccessMethod.Sequential)]
-        public void MyTestMethod()  
-        {
-            var v = testContext.DataRow[0];
-            Assert.AreEqual(v, "3");
-        }
+[TestMethod]
+[DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "MyFile.xml", "MyTable", DataAccessMethod.Sequential)]
+public void MyTestMethod()  
+{
+	var v = testContext.DataRow[0];
+	Assert.AreEqual(v, "3");
+}
 ```
 
 The display name of tests in the above example would appear like they used to be as :
-```csharp
+```
 MyTestMethod (Data Row 0)
 MyTestMethod (Data Row 1)
 ```
-### Behaviour Changes in DataSource Attributes
-Presently, TestFrameworks's Execute() is called once for a data-driven TestMethod, which in-turn takes care of running test for all DataRows. This will be changed to calling TestFramework's Execute() for each DataRow. i.e. the logic of executing data-driven tests will be moved out from framework to adapter.
 
+### Behaviour Changes in DataSource Attributes
+Presently, TestFrameworks's `Execute()` is called once for a data-driven TestMethod, which in-turn takes care of running test for all DataRows. This will be changed to calling TestFramework's `Execute()` for each DataRow. i.e. the logic of executing data-driven tests will be moved out from framework to adapter.
 
 ### Differences between DataSource Attribute and ITestDataSource
 | DataSource                                        | ITestDataSource                                        |
@@ -68,8 +68,7 @@ Presently, TestFrameworks's Execute() is called once for a data-driven TestMetho
 | TestMethod does not require to have parameters    | TestMethod is required to have parameters              |
 
 Note :
-Test authors should not expect data to be set in TestContext for attributes inheriting from ITestDataSource. Going forward, data should only be consumed from Testmethod parameters for data-driven tests. 
-
+Test authors should not expect data to be set in TestContext for attributes inheriting from `ITestDataSource`. Going forward, data should only be consumed from Testmethod parameters for data-driven tests. 
 
 ### Support Scenarios
 Following scenarios will not supported in case of DataSource Attributes :
