@@ -73,7 +73,7 @@ Users can customize the display name of tests in test results by overriding `Get
 ```csharp
 public override string GetDisplayName(MethodInfo methodInfo, object[] data)
 {
-        return string.Format(CultureInfo.CurrentCulture, "MyFavMSTestV2Test ({0})", string.Join(",", data));
+    return string.Format(CultureInfo.CurrentCulture, "MyFavMSTestV2Test ({0})", string.Join(",", data));
 }
 ```
 
@@ -84,9 +84,9 @@ MyFavMSTestV2Test (4,5,6)
 ```
 
 ###  Discovery of `ITestDataSource` attributes
-The MSTest v2 framework, on discovering a `TestMethod` probes additional attributes. On finding attributes inheriting from `ITestDataSource`, framework invokes `GetData()` to fetch test data and iteratively invokes test method with the test data as arguments.
+The MSTest v2 framework, on discovering a `TestMethod`, probes additional attributes. On finding attributes inheriting from `ITestDataSource`, the framework invokes `GetData()` to fetch test data and iteratively invokes the test method with the test data as arguments.
 
 ### Benefits of using `ITestDataSource`
 1. Users can extend `ITestDataSource` to support custom data sources.
-2. Multiple tests can reuse the test data defined in same data source.
+2. Multiple tests can reuse the test data defined in the same data source.
 3. A test case can use multiple test data sources.
