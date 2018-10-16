@@ -4,7 +4,7 @@
 This document deals with how test runs can be customized using the MSTest V2 Framework extensibility.
 
 ## Motivation
-The default workflow for running tests in MSTest V2 involves creating an instance of a TestClass and invoking a TestMethod in it. There are multiple instances where this workflow is required to be tweeked so specific tests are runnable. Some tests require to be run on a UI Thread, some others need to be parameterized. This requires that the Test Framework provide extensibility points so that test authors have the ability to run their tests differently. 
+The default workflow for running tests in MSTest V2 involves creating an instance of a TestClass and invoking a TestMethod in it. There are multiple instances where this workflow is required to be tweaked so specific tests are runnable. Some tests require to be run on a UI Thread, some others need to be parameterized. This requires that the Test Framework provide extensibility points so that test authors have the ability to run their tests differently. 
 
 ## Detailed Design
 The execution flow can broadly be extended at two levels:
