@@ -4,7 +4,7 @@ Welcome to the repository which contains content for the Microsoft Test Framewor
 MSTest V2 API documentation is available [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting).
 
 ### Documentation
- - [Framework Extensibility Description Attributes](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/001-Framework-Extensibility-Description-Attributes.md)
+ - [Framework Extensibility Trait Attributes](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/001-Framework-Extensibility-Trait-Attributes.md)
  - [Framework Extensibility for Custom Assertions](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/002-Framework-Extensibility-Custom-Assertions.md)
  - [Customize Running tests](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/003-Customize-Running-Tests.md)
  - [In-assembly parallel execution](https://github.com/Microsoft/testfx-docs/blob/master/RFCs/004-In-Assembly-Parallel-Execution.md)

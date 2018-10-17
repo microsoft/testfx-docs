@@ -3,6 +3,15 @@
  - Changes to integrate with the performance improvements related to pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
  - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
  
+# 1.3.2 (June 2018)
+ - [x] [Hierarchical view support for data-driven tests ](https://github.com/Microsoft/testfx/pull/417)
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v1.3.1...v1.3.2)
+ 
+### Builds
+* MSTest.TestFramework: [1.3.2](https://www.nuget.org/packages/MSTest.TestFramework/1.3.2)
+* MSTest.TestAdapter: [1.3.2](https://www.nuget.org/packages/MSTest.TestAdapter/1.3.2)
+ 
 # 1.3.1 (May 2018)
  - [x] [AppDomain creation should honor runsettings ](https://github.com/Microsoft/testfx/pull/427)
  - [x] [Don't delete resource folder while clean/rebuild ](https://github.com/Microsoft/testfx/pull/424) 
