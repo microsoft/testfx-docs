@@ -4,9 +4,9 @@
  - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
 
 # 1.4.0-beta (October 2018)
- - [x] [Enabling Tfs properties in test context object] (https://github.com/Microsoft/testfx/pull/472) [enhancement]
- - [x] [Description, WorkItem, CssIteration, CssProjectStructure Attributes should not be treated as traits] (https://github.com/Microsoft/testfx/pull/482) 
- - [x] [Adding appropriate error message for TestMethods expecting parameters but parameters not provided] (https://github.com/Microsoft/testfx/pull/457)
+ - [x] [Enabling Tfs properties in test context object](https://github.com/Microsoft/testfx/pull/472) [enhancement]
+ - [x] [Description, WorkItem, CssIteration, CssProjectStructure Attributes should not be treated as traits](https://github.com/Microsoft/testfx/pull/482) 
+ - [x] [Adding appropriate error message for TestMethods expecting parameters but parameters not provided](https://github.com/Microsoft/testfx/pull/457)
 
 A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/1.3.2...1.4.0-beta) 
 
