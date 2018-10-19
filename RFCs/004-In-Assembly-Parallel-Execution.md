@@ -45,7 +45,7 @@ The value for the number of worker threads to spawn to execute tests can be set 
 
 An assembly/Class/Method can explicitly opt-out of parallelization using an attribute that will indicate that it may not be run in parallel with any other tests. The attribute does not take any arguments, and may be added at the method, class, or assembly level.
 ```csharp
-[DoNotParallelize()]
+[DoNotParallelize]
 ```
 When used at the assembly level, all tests within the assembly will be executed serially.
 When used at the Class level, all tests within the class will be executed serially after the parallel execution of all other tests is completed.
@@ -72,29 +72,31 @@ In-assembly parallel execution can be conditioned using the following means:
 2. as configuration properties set via a .runsettings file [[see here for more]](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md).
 3. by passing runsettings arguments via the command line [[see here for more]](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
-(3) overrides (2) which in turn overrides (1). The ```[DoNotParallelize()]``` annotation may be applied only to source code, and hence remains unaffected by these rules - thus, even if in-assembly parallel execution in conditioned via (2) or (3), specific program elements can still opt-out safely.
+(3) overrides (2) which in turn overrides (1). The ```[DoNotParallelize]``` annotation may be applied only to source code, and hence remains unaffected by these rules - thus, even if in-assembly parallel execution in conditioned via (2) or (3), specific program elements can still opt-out safely.
 
 ### Example
 Consider an assembly UTA1.dll that has a 2 test classes TC1 and TC2 as follows:
-```
+```csharp
 [assembly: Parallelize(Workers = 3, Scope = ExecutionScope.ClassLevel)]
-...
+
+//...
+
 [TestClass]
 public class TC1
 {
-...
+    //...
 }
 
 [TestClass]
-[DoNotParallelize()]  // this test class is opting out
+[DoNotParallelize]  // this test class is opting out
 public class TC2
 {
-...
+     //...
 }
 ```
 
 Furthermore, consider the following test.runsettings file:
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
   <!-- MSTest adapter -->
