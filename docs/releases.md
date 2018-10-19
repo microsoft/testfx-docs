@@ -2,6 +2,7 @@
 # Future
  - Changes to integrate with the performance improvements related to pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
  - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
+ - Add "\_\_Tfs Run id\_\_" to TestContext.Properties [[#36]](https://github.com/Microsoft/testfx-docs/issues/36)
  
 # 1.3.2 (June 2018)
  - [x] [Hierarchical view support for data-driven tests ](https://github.com/Microsoft/testfx/pull/417)
