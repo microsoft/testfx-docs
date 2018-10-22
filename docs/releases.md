@@ -13,7 +13,7 @@ A list of changes since last release are available [here](https://github.com/Mic
 ### Builds
 * MSTest.TestFramework: [1.4.0-beta](https://www.nuget.org/packages/MSTest.TestFramework/1.4.0-beta)
 * MSTest.TestAdapter: [1.4.0-beta](https://www.nuget.org/packages/MSTest.TestAdapter/1.4.0-beta)
-
+ 
 # 1.3.2 (June 2018)
  - [x] [Hierarchical view support for data-driven tests ](https://github.com/Microsoft/testfx/pull/417)
 
