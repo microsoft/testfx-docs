@@ -7,12 +7,12 @@ User should be able to configure global test case timeout for all the test cases
 Make test case timeout configurable via TestTimeout tag which is part of the adapter node in the runsettings.
 
 Here is a sample runsettings: 
-```
-	<Runsettings> 
-		 <MSTestV2> 
-			<TestTimeout>5000</TestTimeout>   
-		 </MSTestV2> 
-	</Runsettings> 
+```xml
+<Runsettings> 
+  <MSTestV2> 
+    <TestTimeout>5000</TestTimeout>   
+  </MSTestV2> 
+</Runsettings> 
 ```
 
 ### Honoring the settings 
