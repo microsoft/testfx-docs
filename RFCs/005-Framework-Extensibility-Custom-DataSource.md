@@ -90,3 +90,6 @@ The MSTest v2 framework, on discovering a `TestMethod`, probes additional attrib
 1. Users can extend `ITestDataSource` to support custom data sources.
 2. Multiple tests can reuse the test data defined in the same data source.
 3. A test case can use multiple test data sources.
+
+### Remarks
+When implementing a custom `ITestDataSource` (attribute), the `GetData()` method should not return an empty sequence, otherwise the test(s) using this data source attribute will always fail.
