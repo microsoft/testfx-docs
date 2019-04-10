@@ -3,6 +3,29 @@
  - Changes to integrate with the performance improvements related to pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
  - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
 
+# 2.0.0-beta2 (February 2019)
+ - [x] (BREAKING CHANGE) [TestContext Properties type fixed to be IDictionary](https://github.com/Microsoft/testfx/pull/563) 
+ - [x] [Base class data rows should not be executed](https://github.com/Microsoft/testfx/pull/546)
+ - [x] [Setting option for marking not runnable tests as failed](https://github.com/Microsoft/testfx/pull/524)
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/1.4.0...2.0.0-beta2) 
+
+### Builds
+* MSTest.TestFramework: [2.0.0-beta2](https://www.nuget.org/packages/MSTest.TestFramework/2.0.0-beta2)
+* MSTest.TestAdapter: [2.0.0-beta2](https://www.nuget.org/packages/MSTest.TestAdapter/2.0.0-beta2)
+
+# 1.4.0 (November 2018)
+ - [x] (BREAKING CHANGE) [Description, WorkItem, CssIteration, CssProjectStructure Attributes will not be treated as traits](https://github.com/Microsoft/testfx/pull/482) 
+ - [x] [Added new runsettings configuration to deploy all files from test source location i.e. DeployTestSourceDependencies](https://github.com/Microsoft/testfx/pull/391) [enhancement]
+ - [x] [Removed Test discovery warnings in Test Output pane](https://github.com/Microsoft/testfx/pull/480) [Contributed by [Carlos Parra](https://github.com/parrainc)]
+ - [x] [Allow test methods returning Task to run without suppling async keyword](https://github.com/Microsoft/testfx/pull/510) [Contributed by [Paul Spangler](https://github.com/spanglerco)]
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/1.4.0-beta...1.4.0) 
+
+### Builds
+* MSTest.TestFramework: [1.4.0](https://www.nuget.org/packages/MSTest.TestFramework/1.4.0)
+* MSTest.TestAdapter: [1.4.0](https://www.nuget.org/packages/MSTest.TestAdapter/1.4.0)
+
 # 1.4.0-beta (October 2018)
  - [x] [Enabling Tfs properties in test context object](https://github.com/Microsoft/testfx/pull/472) [enhancement]
  - [x] [Description, WorkItem, CssIteration, CssProjectStructure Attributes should not be treated as traits](https://github.com/Microsoft/testfx/pull/482) 
