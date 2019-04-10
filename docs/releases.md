@@ -10,6 +10,10 @@
 
 A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/2.0.0-beta2...v2.0.0-beta4) 
 
+### Builds
+* MSTest.TestFramework: [2.0.0-beta4](https://www.nuget.org/packages/MSTest.TestFramework/2.0.0-beta4)
+* MSTest.TestAdapter: [2.0.0-beta4](https://www.nuget.org/packages/MSTest.TestAdapter/2.0.0-beta4)
+
  # 2.0.0-beta2 (February 2019)
  - [x] (BREAKING CHANGE) [TestContext Properties type fixed to be IDictionary](https://github.com/Microsoft/testfx/pull/563) 
  - [x] [Base class data rows should not be executed](https://github.com/Microsoft/testfx/pull/546)
