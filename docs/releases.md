@@ -1,7 +1,4 @@
 # Releases
-# Future
- - Changes to integrate with the performance improvements related to pruning the set of assemblies given to test adapters [[RFC]](https://github.com/Microsoft/vstest-docs/blob/master/RFCs/0020-Improving-Logic-To-Pass-Sources-To-Adapters.md)
- - Conforming to "Guidelines for a TestCase's FullyQualifiedName" [[RFC]](https://github.com/Microsoft/vstest-docs/pull/133)
 
 # 2.0.0-beta4 (April 2019)
  - [x] [Deployment Item support in .NET Core](https://github.com/Microsoft/testfx/pull/565) 
