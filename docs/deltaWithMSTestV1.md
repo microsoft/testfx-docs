@@ -22,6 +22,14 @@ Listed are the difference in behaviour of MSTest V2 w.r.t MSTest V1 :
 ```
 11. The TestCleanup method on a TestClass is invoked even if its corresponding TestInitialize method fails. See [#250](https://github.com/Microsoft/testfx/issues/250) for details.
 12. The time taken by `AssemblyInitialize` and `ClassInitialize` are not considered as part of a tests duration thereby limiting their impact on a test timing out.
+13. Test which are not runnable can be configured to be marked as failed via MapNotRunnableToFailed tag which is part of the adapter node in the runsettings.
+ ```
+ <RunSettings>    
+  <MSTest> 
+    <MapNotRunnableToFailed>true</MapNotRunnableToFailed> 
+  </MSTest> 
+</RunSettings>
+```
 
 Here are the features that are not supported:
 1.	Tests cannot be included into an "Ordered Test".
