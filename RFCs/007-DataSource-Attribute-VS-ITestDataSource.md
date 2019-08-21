@@ -1,7 +1,7 @@
 # RFC 007- DataSource Attribute Vs ITestDataSource
 
 ## Summary
-This details the MSTest V2 framework attribute "DataSource" for data driven tests where test data can be present in an excel file, xml file, sql database or OleDb. You can refer msdn documentation [here](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.datasourceattribute.aspx) for more details.
+This details the MSTest V2 framework attribute "DataSource" for data driven tests where test data can be present in an excel file, xml file, sql database or OleDb. You can refer documentation [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.testtools.unittesting.datasourceattribute) for more details.
 
 ## Motivation
 At present, there are two codeflows for data-driven tests, one for DataSource Attribute and another for DataRow & DynamicData Attributes. This aims to have one common codeflow for handling data-driven tests.
