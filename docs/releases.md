@@ -1,5 +1,19 @@
 # Releases
 
+# 2.0.0 (September 2019)
+ - [x] [Implemented 'AddResultFile' for NetCore TestContext](https://github.com/Microsoft/testfx/pull/609) 
+ - [x] [Datarow tests - support methods with optional parameters](https://github.com/Microsoft/testfx/pull/604)
+ - [x] [Implemented Initialize Inheritance for ClassInitialize attribute](https://github.com/Microsoft/testfx/issues/577)
+ - [x] [Apply TestCategory from derived class on inherited test methods](https://github.com/Microsoft/testfx/issues/513)
+ - [x] [Fixed IsNotInstanceOfType failing when objected being asserted on is null](https://github.com/Microsoft/testfx/issues/622)
+ - [x] [Setting MapNotRunnableToFailed to true by default](https://github.com/Microsoft/testfx/issues/610)
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v2.0.0-beta4...v2.0.0) 
+
+### Builds
+* MSTest.TestFramework: [2.0.0](https://www.nuget.org/packages/MSTest.TestFramework/2.0.0)
+* MSTest.TestAdapter: [2.0.0](https://www.nuget.org/packages/MSTest.TestAdapter/2.0.0)
+
 # 2.0.0-beta4 (April 2019)
  - [x] [Deployment Item support in .NET Core](https://github.com/Microsoft/testfx/pull/565) 
  - [x] [Support for CancellationTokenSource in TestContext to help in timeout scenario](https://github.com/Microsoft/testfx/pull/585)
