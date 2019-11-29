@@ -1,6 +1,6 @@
 # Releases
 
-# 2.0.0 (November 2019)
+# 2.1.0-beta (November 2019)
  - [x] [Fix incompatibility between multiple versions of mstest adapter present in a solution](https://github.com/Microsoft/testfx/pull/659)
  - [x] [Build script fix to work with VS2019](https://github.com/Microsoft/testfx/pull/641)
 
