@@ -1,5 +1,15 @@
 # Releases
 
+# 2.0.0 (November 2019)
+ - [x] [Fix incompatibility between multiple versions of mstest adapter present in a solution](https://github.com/Microsoft/testfx/pull/659)
+ - [x] [Build script fix to work with VS2019](https://github.com/Microsoft/testfx/pull/641)
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v2.0.0...v2.1.0-beta)
+
+### Builds
+* MSTest.TestFramework: [2.1.0-beta](https://www.nuget.org/packages/MSTest.TestFramework/2.1.0-beta)
+* MSTest.TestAdapter: [2.1.0-beta](https://www.nuget.org/packages/MSTest.TestAdapter/2.1.0-beta)
+
 # 2.0.0 (September 2019)
  - [x] [Implemented 'AddResultFile' for NetCore TestContext](https://github.com/Microsoft/testfx/pull/609) 
  - [x] [Datarow tests - support methods with optional parameters](https://github.com/Microsoft/testfx/pull/604)
