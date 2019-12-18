@@ -1,5 +1,14 @@
 # Releases
 
+# 2.1.0-beta2 (December 2019)
+ - [x] [Friendly test names](https://github.com/microsoft/testfx/pull/466)
+
+A list of changes since last release are available [here](https://github.com/Microsoft/testfx/compare/v2.1.0-beta...v2.1.0-beta2)
+
+### Builds
+* MSTest.TestFramework: [2.1.0-beta2](https://www.nuget.org/packages/MSTest.TestFramework/2.1.0-beta2)
+* MSTest.TestAdapter: [2.1.0-beta2](https://www.nuget.org/packages/MSTest.TestAdapter/2.1.0-beta2)
+
 # 2.1.0-beta (November 2019)
  - [x] [Fix incompatibility between multiple versions of mstest adapter present in a solution](https://github.com/Microsoft/testfx/pull/659)
  - [x] [Build script fix to work with VS2019](https://github.com/Microsoft/testfx/pull/641)
