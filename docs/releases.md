@@ -1,5 +1,16 @@
 # Releases
 
+# 2.1.0 (January 2020)
+- [x] [Fix parameters in tests](https://github.com/microsoft/testfx/pull/680)
+- [x] [Fix bugs in parent class init/cleanup logic](https://github.com/microsoft/testfx/pull/660)
+- [x] [Record test start/end events for data driven tests](https://github.com/microsoft/testfx/pull/631)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.1.0-beta2...v2.1.0)
+
+### Builds
+* MSTest.TestFramework: [2.1.0](https://www.nuget.org/packages/MSTest.TestFramework/2.1.0)
+* MSTest.TestAdapter: [2.1.0](https://www.nuget.org/packages/MSTest.TestAdapter/2.1.0)
+
 # 2.1.0-beta2 (December 2019)
  - [x] [Friendly test names](https://github.com/microsoft/testfx/pull/466)
 
