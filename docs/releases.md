@@ -1,5 +1,19 @@
 # Releases
 
+# 2.1.1 (March 2020)
+- [x] [Add FSharp E2E test](https://github.com/microsoft/testfx/pull/683) 
+- [x] [remove unused usings](https://github.com/microsoft/testfx/pull/694)
+- [x] [fix blog link](https://github.com/microsoft/testfx/pull/677)       
+- [x] [Create Write() in TestContext](https://github.com/microsoft/testfx/pull/686)
+- [x] [switch arguments for expected and actual in Assert.AreEquals in multiple tests](https://github.com/microsoft/testfx/pull/685)
+- [x] [Spelling / conventions and grammar fixes](https://github.com/microsoft/testfx/pull/688)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.1.0...v2.1.1)
+
+### Builds
+* MSTest.TestFramework: [2.1.1](https://www.nuget.org/packages/MSTest.TestFramework/2.1.1)
+* MSTest.TestAdapter: [2.1.1](https://www.nuget.org/packages/MSTest.TestAdapter/2.1.1)
+
 # 2.1.0 (January 2020)
 - [x] [Fix parameters in tests](https://github.com/microsoft/testfx/pull/680)
 - [x] [Fix bugs in parent class init/cleanup logic](https://github.com/microsoft/testfx/pull/660)
