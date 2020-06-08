@@ -1,5 +1,19 @@
 # Releases
 
+# 2.1.2 (June 2020)
+- [x] [Set IsClassInitializeExecuted=true after base class init to avoid repeated class init calls](https://github.com/microsoft/testfx/pull/705)
+- [x] [enhance documentation on when the TestCleanup is executed](https://github.com/microsoft/testfx/pull/709)
+- [x] [Improve CollectionAssert.Are*Equal docs (#711)](https://github.com/microsoft/testfx/pull/712)
+- [x] [Fixed documentation for the TestMethodAttribute](https://github.com/microsoft/testfx/pull/715)
+- [x] [Make AssemblyCleanup/ClassCleanup execute even if Initialize fails.](https://github.com/microsoft/testfx/pull/696)
+- [x] [Change NuGet package to use `None` ItemGroup to copy files to output directory](https://github.com/microsoft/testfx/pull/703)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.1.1...v2.1.2)
+
+### Builds
+* MSTest.TestFramework: [2.1.2](https://www.nuget.org/packages/MSTest.TestFramework/2.1.2)
+* MSTest.TestAdapter: [2.1.2](https://www.nuget.org/packages/MSTest.TestAdapter/2.1.2)
+
 # 2.1.1 (March 2020)
 - [x] [Add FSharp E2E test](https://github.com/microsoft/testfx/pull/683) 
 - [x] [remove unused usings](https://github.com/microsoft/testfx/pull/694)
