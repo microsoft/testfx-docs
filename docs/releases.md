@@ -1,6 +1,6 @@
 # Releases
 
-# 2.3.0-preview-20201126-03 (November 2020)
+# 2.2.0-preview-20201126-03 (November 2020)
 - [x] [Load specific types from adapter](https://github.com/microsoft/testfx/pull/746)
 - [x] [Added support for ManagedType and ManagedClass](https://github.com/microsoft/testfx/pull/737)
 - [x] [Add nullable-annotated Assert.IsNotNull](https://github.com/microsoft/testfx/pull/744)
@@ -11,11 +11,11 @@
 - [x] [Fix XML doc comments (code -> c)](https://github.com/microsoft/testfx/pull/730)
 - [x] [Fix null ref bug when base class cleanup fails when there is no derived class cleanup method](https://github.com/microsoft/testfx/pull/716)
 
-A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.1.2...v2.3.0-preview-20201126-03)
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.1.2...v2.2.0-preview-20201126-03)
 
 ### Builds
-* MSTest.TestFramework: [2.3.0-preview-20201126-03](https://www.nuget.org/packages/MSTest.TestFramework/2.3.0-preview-20201126-03)
-* MSTest.TestAdapter: [2.3.0-preview-20201126-03](https://www.nuget.org/packages/MSTest.TestAdapter/2.3.0-preview-20201126-03)
+* MSTest.TestFramework: [2.2.0-preview-20201126-03](https://www.nuget.org/packages/MSTest.TestFramework/2.2.0-preview-20201126-03)
+* MSTest.TestAdapter: [2.2.0-preview-20201126-03](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.0-preview-20201126-03)
 
 # 2.1.2 (June 2020)
 - [x] [Set IsClassInitializeExecuted=true after base class init to avoid repeated class init calls](https://github.com/microsoft/testfx/pull/705)
