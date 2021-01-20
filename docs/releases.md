@@ -1,5 +1,22 @@
 # Releases
 
+# 2.2.0-preview-20210115-03 (January 2021)
+- [x] [Pdb2Pbp path fix](https://github.com/microsoft/testfx/pull/761)
+- [x] [Fixing pdb2pdb package](https://github.com/microsoft/testfx/pull/760)
+- [x] [Fixing nugets](https://github.com/microsoft/testfx/pull/759)
+- [x] [Updates](https://github.com/microsoft/testfx/pull/755)
+- [x] [Refactored `TypesToLoadAttribute` into `TestExtensionTypesAttribute`](https://github.com/microsoft/testfx/pull/754)
+- [x] [Fixed TypesToLoadAttribute compatibility](https://github.com/microsoft/testfx/pull/753)
+- [x] [BugFix: WorkItemAttribute not extracted ](https://github.com/microsoft/testfx/pull/749)
+- [x] [Removed unnecessary whitespace](https://github.com/microsoft/testfx/pull/752)
+- [x] [Removed MyGet references from README.md](https://github.com/microsoft/testfx/pull/751)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.0-preview-20201126-03...v2.2.0-preview-20210115-03)
+
+### Builds
+* MSTest.TestFramework: [2.2.0-preview-20210115-03](https://www.nuget.org/packages/MSTest.TestFramework/2.2.0-preview-20210115-03)
+* MSTest.TestAdapter: [2.2.0-preview-20210115-03](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.0-preview-20210115-03)
+
 # 2.2.0-preview-20201126-03 (November 2020)
 - [x] [Load specific types from adapter](https://github.com/microsoft/testfx/pull/746)
 - [x] [Added support for ManagedType and ManagedClass](https://github.com/microsoft/testfx/pull/737)
