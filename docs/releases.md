@@ -1,6 +1,6 @@
 # Releases
 
-# 2.2.1 (February 2021)
+# 2.2.1 (March 2021)
 - [x] [Prepend MSTest to log messages, without formatting](https://github.com/microsoft/testfx/pull/785)
 - [x] [TestPlatform version updated to v16.9.1](https://github.com/microsoft/testfx/pull/784)
 - [x] [WIP: Remove .txt extension from LICENSE file](https://github.com/microsoft/testfx/pull/781)
