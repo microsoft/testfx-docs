@@ -1,5 +1,21 @@
 # Releases
 
+# 2.2.1 (February 2021)
+- [x] [Prepend MSTest to log messages, without formatting](https://github.com/microsoft/testfx/pull/785)
+- [x] [TestPlatform version updated to v16.9.1](https://github.com/microsoft/testfx/pull/784)
+- [x] [WIP: Remove .txt extension from LICENSE file](https://github.com/microsoft/testfx/pull/781)
+- [x] [Merge parameters safely](https://github.com/microsoft/testfx/pull/778)
+- [x] [Forward logs to EqtTrace on netcore](https://github.com/microsoft/testfx/pull/776)
+- [x] [Merge settings safely](https://github.com/microsoft/testfx/pull/771)
+- [x] [ManagedNames impl. refactored.](https://github.com/microsoft/testfx/pull/766)
+- [x] [Fixed concurrency issues in the TypeCache class.](https://github.com/microsoft/testfx/pull/758)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.0-preview-20210115-03...v2.2.1)
+
+### Builds
+* MSTest.TestFramework: [2.2.1](https://www.nuget.org/packages/MSTest.TestFramework/2.2.1)
+* MSTest.TestAdapter: [2.2.1](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.1)
+
 # 2.2.0-preview-20210115-03 (January 2021)
 - [x] [Pdb2Pbp path fix](https://github.com/microsoft/testfx/pull/761)
 - [x] [Fixing pdb2pdb package](https://github.com/microsoft/testfx/pull/760)
