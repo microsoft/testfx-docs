@@ -1,5 +1,17 @@
 # Releases
 
+# 2.2.2 (March 2021)
+- [x] [NuGet package dependencies fixed.](https://github.com/microsoft/testfx/pull/797)
+- [x] [Missing assembly added to TestAdapter package](https://github.com/microsoft/testfx/pull/796)
+- [x] [Unit test display name issue fixed.](https://github.com/microsoft/testfx/pull/795)
+- [x] [Fix infinite iteration in Matches method](https://github.com/microsoft/testfx/pull/792)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.1...v2.2.2)
+
+### Builds
+* MSTest.TestFramework: [2.2.2](https://www.nuget.org/packages/MSTest.TestFramework/2.2.2)
+* MSTest.TestAdapter: [2.2.2](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.2)
+
 # 2.2.1 (March 2021)
 - [x] [Prepend MSTest to log messages, without formatting](https://github.com/microsoft/testfx/pull/785)
 - [x] [TestPlatform version updated to v16.9.1](https://github.com/microsoft/testfx/pull/784)
