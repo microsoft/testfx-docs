@@ -133,9 +133,9 @@ Documentation for nuget.exe command line reference is [here](https://docs.micros
 The first level of diagnosis for adapter failures can start with enabling verbose logging in the Visual studio Test Platform itself. Here is how to turn that on:
 
 * **TP V1** : [This](https://blogs.msdn.microsoft.com/aseemb/2012/03/01/how-to-enable-ute-logs/) blog helps detail setting up diagnostic logging.
-* **TP V2**(The open-source cross-plat Test Platform): [This](https://github.com/Microsoft/vstest-docs/blob/master/docs/diagnose.md#collect-traces-using-command-line) section helps detail the process to enable diagnostic logging.
+* **TP V2**(The open-source cross-plat Test Platform): [This](https://github.com/Microsoft/vstest-docs/blob/main/docs/diagnose.md#collect-traces-using-command-line) section helps detail the process to enable diagnostic logging.
 
 One can always add a `Debugger.Launch` at the main entry points:
-* [MSTestDiscoverer.DiscoverTests](https://github.com/Microsoft/testfx/blob/master/src/Adapter/MSTest.CoreAdapter/MSTestDiscoverer.cs) for discovery.
-* [MSTestExecutor.RunTests](https://github.com/Microsoft/testfx/blob/master/src/Adapter/MSTest.CoreAdapter/MSTestExecutor.cs) - both the overloads that take sources and tests for execution.
+* [MSTestDiscoverer.DiscoverTests](https://github.com/Microsoft/testfx/blob/main/src/Adapter/MSTest.CoreAdapter/MSTestDiscoverer.cs) for discovery.
+* [MSTestExecutor.RunTests](https://github.com/Microsoft/testfx/blob/main/src/Adapter/MSTest.CoreAdapter/MSTestExecutor.cs) - both the overloads that take sources and tests for execution.
  Select the appropriate debugger and step through the code.
