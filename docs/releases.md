@@ -1,5 +1,28 @@
 # Releases
 
+# 2.2.5 (June 2021)
+
+- [x] [Fixes #799 by testing logged messages against "null or whitespace" instead of "null or empty"](https://github.com/microsoft/testfx/pull/892)
+- [x] [Added missing framework references for WinUI](https://github.com/microsoft/testfx/pull/890)
+- [x] [Upgraded winui to 0.8.0](https://github.com/microsoft/testfx/pull/888)
+- [x] [Fixed a bug in `ITestDataSource` data deserialization](https://github.com/microsoft/testfx/pull/864)
+- [x] [Fixed DataSource deserialization.](https://github.com/microsoft/testfx/pull/859)
+- [x] [Fixed a serialization issue with DataRows.](https://github.com/microsoft/testfx/pull/847)
+- [x] [Replaced license file with an expression.](https://github.com/microsoft/testfx/pull/846)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.4...v2.2.5)
+
+### Builds
+* MSTest.TestFramework: [2.2.5](https://www.nuget.org/packages/MSTest.TestFramework/2.2.5)
+* MSTest.TestAdapter: [2.2.5](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.5)
+
+# 2.2.4 (May 2021)
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/0b95a26282eae17f896d732381e5c77b9a603382...v2.2.4)
+
+### Builds
+* MSTest.TestFramework: [2.2.4](https://www.nuget.org/packages/MSTest.TestFramework/2.2.4)
+* MSTest.TestAdapter: [2.2.4](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.4)
+
 # 2.2.4-preview-20210331-02 (March 2021)
 - [x] [Fix StackOverflowException in StringAssert.DoesNotMatch](https://github.com/microsoft/testfx/pull/806)
 - [x] [Added basic WinUI3 support.](https://github.com/microsoft/testfx/pull/782)
