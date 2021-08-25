@@ -1,5 +1,17 @@
 # Releases
 
+# 2.2.6 (August 2021)
+- [x] Allow opting-out of ITestDataSource test discovery.
+- [x] [Enable internal testclass discovery (#937)](https://github.com/microsoft/testfx/pull/944)
+- [x] [Fix DateTime looses significant digits in DynamicData (#875)](https://github.com/microsoft/testfx/pull/907)
+
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.5...v2.2.6)
+
+### Builds
+* MSTest.TestFramework: [2.2.6](https://www.nuget.org/packages/MSTest.TestFramework/2.2.6)
+* MSTest.TestAdapter: [2.2.6](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.6)
+
 # 2.2.5 (June 2021)
 
 - [x] [Fixes #799 by testing logged messages against "null or whitespace" instead of "null or empty"](https://github.com/microsoft/testfx/pull/892)
