@@ -1,4 +1,14 @@
 # Releases
+# 2.2.7 (September 2021)
+
+- [x] [Fixed missing strong-name and Authenticode signatures](https://github.com/microsoft/testfx/pull/956)
+- [x] [Resolve dependencies from GAC](https://github.com/microsoft/testfx/pull/951)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.6...v2.2.7)
+
+### Builds
+* MSTest.TestFramework: [2.2.7](https://www.nuget.org/packages/MSTest.TestFramework/2.2.7)
+* MSTest.TestAdapter: [2.2.7](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.7)
 
 # 2.2.6 (August 2021)
 - [x] Allow opting-out of ITestDataSource test discovery.
