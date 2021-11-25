@@ -1,4 +1,25 @@
 # Releases
+# 2.2.8 (November 2021)
+- [x] Dependency version updates.
+- [x] [Added internal versioning](https://github.com/microsoft/testfx/pull/1012)
+- [x] [Fixed .nuspec files to mitigate NU5050 error.](https://github.com/microsoft/testfx/pull/1011)
+- [x] [Updated to WindowsAppSDK 1.0.0 GA](https://github.com/microsoft/testfx/pull/1009)
+- [x] [Downgrade uwp](https://github.com/microsoft/testfx/pull/1008)
+- [x] [Add DoesNotReturnIf to Assert.IsTrue/Assert.IsFalse](https://github.com/microsoft/testfx/pull/1005)
+- [x] [Implement Class Cleanup Lifecycle selection](https://github.com/microsoft/testfx/pull/968)
+- [x] [Fix concurrent issues in DataSerializationHelper](https://github.com/microsoft/testfx/pull/998)
+- [x] [Fix for incorrect Microsoft.TestPlatform.AdapterUtilities.dll for net45 target (#980)](https://github.com/microsoft/testfx/pull/988)
+- [x] [Updated to WindowsAppSDK 1.0.0-preview1](https://github.com/microsoft/testfx/pull/985)
+- [x] [CVE-2017-0247 fixed](https://github.com/microsoft/testfx/pull/976)
+- [x] [Added 500ms overhead to parallel execution tests.](https://github.com/microsoft/testfx/pull/962)
+- [x] [Cherry-picking the changes from 2.2.7](https://github.com/microsoft/testfx/pull/958)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.7...v2.2.8)
+
+### Builds
+* MSTest.TestFramework: [2.2.8](https://www.nuget.org/packages/MSTest.TestFramework/2.2.8)
+* MSTest.TestAdapter: [2.2.8](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.8)
+
 # 2.2.7 (September 2021)
 
 - [x] [Fixed missing strong-name and Authenticode signatures](https://github.com/microsoft/testfx/pull/956)
