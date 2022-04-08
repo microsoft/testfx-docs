@@ -1,4 +1,32 @@
 # Releases
+
+# 2.2.9 (April 2022)
+
+## Parallel output
+
+> 🙇 Shout out to @SimonCropp, for bringing this functionality to XUnit in his https://github.com/SimonCropp/XunitContext project. And being an inspiration for implementing this.
+
+MSTest 2.2.9 captures all Console output and attaches it to the correct test, even if you are running tests in parallel. This output is captured from your test code as well as from the tested code. And it requires no special setup. 
+
+### Before
+In 2.2.8, test output is scattered among tests, in our example, one unlucky test gets all the output of other tests just mixed together:
+
+![image](https://user-images.githubusercontent.com/5735905/162252520-0572d932-c798-4b7e-8961-44f39b5a32b9.png)
+
+### After
+
+With 2.2.9, each output is correctly attached to the test that produced it:
+
+![image](https://user-images.githubusercontent.com/5735905/162252738-2dae4ff3-d7bf-473a-9304-66cf25510a89.png)
+![image](https://user-images.githubusercontent.com/5735905/162252762-4304b9c0-1e60-4089-83e3-e8f341cb9329.png)
+
+Also notice that we are also capturing debug, trace and error. And we are not awaiting the FastChild method, and the output is still assigned correctly.  [Souce code.](https://gist.github.com/nohwnd/2936753d94301d7991059660d1d63a8a)
+
+#### Limitations
+Due to the way that class and assembly initialize, and cleanup are invoked, their output will end up in the first test that run (or last for cleanup). This is unfortunately not easily fixable.
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.8...v2.2.9)
+
 # 2.2.8 (November 2021)
 - [x] Dependency version updates.
 - [x] [Added internal versioning](https://github.com/microsoft/testfx/pull/1012)
