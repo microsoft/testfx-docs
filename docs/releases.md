@@ -25,6 +25,10 @@ Also notice that we are also capturing debug, trace and error. And we are not aw
 #### Limitations
 Due to the way that class and assembly initialize, and cleanup are invoked, their output will end up in the first test that run (or last for cleanup). This is unfortunately not easily fixable.
 
+### Builds
+* MSTest.TestFramework: [2.2.9](https://www.nuget.org/packages/MSTest.TestFramework/2.2.9)
+* MSTest.TestAdapter: [2.2.9](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.9)
+
 A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.8...v2.2.9)
 
 # 2.2.8 (November 2021)
