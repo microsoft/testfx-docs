@@ -1,5 +1,16 @@
 # Releases
 
+# 2.2.10-preview-20220414-01 (April 2022)
+- [x] [Fix write conflicts in parallel output](https://github.com/microsoft/testfx/pull/1068)
+- [x] [Fixed test run executable files.](https://github.com/microsoft/testfx/pull/1064)
+- [x] [[UITestMethod] should invoke test method with null](https://github.com/microsoft/testfx/pull/1045)
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.9...v2.2.10-preview-20220414-01)
+
+### Builds
+* MSTest.TestFramework: [2.2.10-preview-20220414-01](https://www.nuget.org/packages/MSTest.TestFramework/2.2.10-preview-20220414-01)
+* MSTest.TestAdapter: [2.2.10-preview-20220414-01](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.10-preview-20220414-01)
+
 # 2.2.9 (April 2022)
 
 ## Parallel output
