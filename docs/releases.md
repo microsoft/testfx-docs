@@ -1,5 +1,31 @@
 # Releases
 
+# 2.2.10 (April 2022)
+
+- [x] [Run dotnet format whitespace](https://github.com/microsoft/testfx/pull/1085)
+
+- [x] [Update dependencies from https://github.com/dotnet/arcade build 20220425.6](https://github.com/microsoft/testfx/pull/1087)
+
+- [x] [Added more fail paths for data serialization.](https://github.com/microsoft/testfx/pull/1084)
+
+- [x] [Added MSTest meta-package.](https://github.com/microsoft/testfx/pull/1076)
+
+- [x] [Test execution bugs in specific TFMs addressed.](https://github.com/microsoft/testfx/pull/1071)
+
+- [x] [Static init of StackTraceHelper.typesToBeExcluded](https://github.com/microsoft/testfx/pull/1055)
+
+- [x] [Update description of the Nuget packages](https://github.com/microsoft/testfx/pull/981)
+
+- [x] [Converted files to utf-8 so they can be diffed.](https://github.com/microsoft/testfx/pull/1070)
+
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.10-preview-20220414-01...v2.2.10)
+
+### Builds
+* MSTest: [2.2.10](https://www.nuget.org/packages/MSTest/2.2.10)
+* MSTest.TestFramework: [2.2.10](https://www.nuget.org/packages/MSTest.TestFramework/2.2.10)
+* MSTest.TestAdapter: [2.2.10](https://www.nuget.org/packages/MSTest.TestAdapter/2.2.10)
+
 # 2.2.10-preview-20220414-01 (April 2022)
 - [x] [Fix write conflicts in parallel output](https://github.com/microsoft/testfx/pull/1068)
 - [x] [Fixed test run executable files.](https://github.com/microsoft/testfx/pull/1064)
