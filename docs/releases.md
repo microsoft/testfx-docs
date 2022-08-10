@@ -1,5 +1,36 @@
 # Releases
 
+# 2.3.0-preview-20220810-02 (August 2022)
+
+- [x] [Fixed issues with SDK style projects.](https://github.com/microsoft/testfx/pull/1171)
+
+- [x] [Assert failure messages](https://github.com/microsoft/testfx/pull/1172)
+
+- [x] [Better messages for XXXInitialize and XXXCleanup](https://github.com/microsoft/testfx/pull/1147)
+
+- [x] [TestResults folder names are now cross platform compatible, as per #678](https://github.com/microsoft/testfx/pull/1119)
+
+- [x] [Ensure assertions do not fail with FormatException](https://github.com/microsoft/testfx/pull/1126)
+
+- [x] [Prevent format exceptions when parameters array is empty](https://github.com/microsoft/testfx/pull/1124)
+
+- [x] [Adding Microsoft SECURITY.MD](https://github.com/microsoft/testfx/pull/1109)
+
+- [x] [[main] Update dependencies from dotnet/arcade](https://github.com/microsoft/testfx/pull/1098)
+
+- [x] [Remove unused classes](https://github.com/microsoft/testfx/pull/1089)
+
+- [x] [Add whitespace editorconfig and run dotnet format whitespace](https://github.com/microsoft/testfx/pull/1090)
+
+- [x] Bumped up version to 2.3.0
+
+A list of changes since last release are available [here](https://github.com/microsoft/testfx/compare/v2.2.10...v2.3.0-preview-20220810-02)
+
+### Builds
+* MSTest: [2.3.0-preview-20220810-02](https://www.nuget.org/packages/MSTest/2.3.0-preview-20220810-02)
+* MSTest.TestFramework: [2.3.0-preview-20220810-02](https://www.nuget.org/packages/MSTest.TestFramework/2.3.0-preview-20220810-02)
+* MSTest.TestAdapter: [2.3.0-preview-20220810-02](https://www.nuget.org/packages/MSTest.TestAdapter/2.3.0-preview-20220810-02)
+
 # 2.2.10 (April 2022)
 
 - [x] [Run dotnet format whitespace](https://github.com/microsoft/testfx/pull/1085)
