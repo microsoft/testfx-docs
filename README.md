@@ -1,3 +1,5 @@
+# This repository is archived, content is moved to https://github.com/microsoft/testfx
+
 ### Microsoft Test Framework "MSTest V2" Documentation
 Welcome to the repository which contains content for the Microsoft Test Framework "MSTest V2" documentation. If you are looking for the Microsoft Test Framework "MSTest V2" product repository, you can find it [here](https://github.com/Microsoft/testfx).
 
